@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Poppins";
+  background-color: white;
+}
+
+.Card {
+  display: flex;
+  justify-content: space-between;
+  background-image: url("../images/topSection-new.png");
+}
+
+.intro_div {
+  width: 40rem;
+  padding: 7rem 0rem 0 92px;
+  text-transform: uppercase;
+}
+
+.intro_div > h1 {
+  color: #4e4e4e;
+  font-weight: 600;
+  margin: 0;
+}
+
+.intro_div > p {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 37px;
+}
+
+.pos-button {
+  padding: 10px 20px;
+  background-color: #e36456;
+  font-size: 12px;
+  border: #e36456;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.pos-button:hover {
+  background-color: #da5547 !important;
+  color: #fff !important;
+}
+
+img {
+  width: 42rem;
+}
+
+.para {
+  font-size: 1.2rem;
+  padding: 1rem 5rem 1rem 1rem;
+  margin: 3rem auto;
+  width: 90%;
+  /* margin-left: 5rem; */
+}
+
+.apply-button {
+  padding: 5px 20px;
+  text-transform: uppercase;
+  background: #e36456;
+  border: #e36456;
+  border-radius: 8px;
+  color: #fff;
+  letter-spacing: 2px;
+}

@@ -2,6 +2,7 @@
 
 .wrapper {
   font-family: "Poppins", sans-serif;
+  margin-top: 7rem;
 }
 section {
   padding: 1rem;
@@ -39,6 +40,9 @@ section {
   margin-bottom: 40px;
 }
 
+.job-header > h1 {
+  font-size: 2rem;
+}
 .job-header > h1,
 .card-title,
 .card-subtitle {
