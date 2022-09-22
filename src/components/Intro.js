@@ -1,11 +1,11 @@
 import React from "react";
-import image from "../images/img.PNG";
+import image from "../images/HomePage-Banner.png";
 import "./Intro.css";
 
 const Intro = () => {
   return (
     <div>
-      <div className="Card">
+      <div className="intro_card">
         <div className="intro_div">
           <h1>Work with us</h1>
           <p>Join Our Team And Help Shape the Future</p>

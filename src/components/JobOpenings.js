@@ -23,17 +23,17 @@ const JobOpenings = () => {
 
       const data = await response.json();
 
-      console.log(data[1]);
+      console.log(data);
 
       const loadedJobData = [];
 
       for (const key in data) {
-        let dom = document.createElement("div");
-        let frag2 = document
-          .createRange()
-          .createContextualFragment(data[key].description);
-        dom.appendChild(frag2);
-        console.log(dom);
+        // let dom = document.createElement("div");
+        // let frag2 = document
+        //   .createRange()
+        //   .createContextualFragment(data[key].description);
+        // dom.appendChild(frag2);
+        // console.log(dom);
         loadedJobData.push({
           id: key,
           title: data[key].title,
@@ -41,6 +41,7 @@ const JobOpenings = () => {
           description: data[key].description,
         });
       }
+
       setAddJobs(loadedJobData);
     } catch (error) {
       setError(error.message);
@@ -66,6 +67,7 @@ const JobOpenings = () => {
         <section>
           <div className="job-header">
             <h1>Current Job Openings</h1>
+
             <main></main>
           </div>
           <div className="job_postings">{content}</div>
