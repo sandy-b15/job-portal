@@ -1,28 +1,78 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useCallback, useEffect, useState } from "react";
+import JobListing from "./JobListing";
 import "./JobOpenings.css";
+import { api_token } from "../config/config";
 
 const JobOpenings = () => {
+  const [addJobs, setAddJobs] = useState([]);
+  const [error, setError] = useState(null);
+  const fetchJobDetailsHandler = useCallback(async () => {
+    setError(null);
+    let url = "https://lucidatechnologies-team.freshteam.com/api/job_postings";
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${api_token.token}`,
+          "Content-Type": "application/json ",
+        },
+      });
+      if (!response.ok) {
+        throw new Error("Something went wrong!");
+      }
+
+      const data = await response.json();
+
+      console.log(data);
+
+      const loadedJobData = [];
+
+      for (const key in data) {
+        // let dom = document.createElement("div");
+        // let frag2 = document
+        //   .createRange()
+        //   .createContextualFragment(data[key].description);
+        // dom.appendChild(frag2);
+        // console.log(dom);
+        loadedJobData.push({
+          id: key,
+          title: data[key].title,
+          experience: data[key].experience,
+          description: data[key].description,
+        });
+      }
+
+      setAddJobs(loadedJobData);
+    } catch (error) {
+      setError(error.message);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchJobDetailsHandler();
+  }, [fetchJobDetailsHandler]);
+
+  let content = <p>No Jobs Found</p>;
+
+  if (addJobs.length > 0) {
+    content = <JobListing jobs={addJobs} />;
+  }
+
+  if (error) {
+    content = <p>{error}</p>;
+  }
   return (
     <Fragment>
-      <section>
-        <div className="job-header">
-          <h1>Current Job Openings</h1>
-        </div>
-        <div className="card job-card">
-          <div className="card-body">
-            <h5 className="card-title mb-2">Marketing Manager</h5>
-            <h6 className="card-subtitle mb-4 ">Experience: 2-5 years</h6>
-            <h6 className="card-subtitle mb-2">Job Description</h6>
-            <p className="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <div className="btn-actions">
-              <button className="btn btn-apply">Apply</button>
-            </div>
+      <div className="wrapper">
+        <section>
+          <div className="job-header">
+            <h1>Current Job Openings</h1>
+
+            <main></main>
           </div>
-        </div>
-      </section>
+          <div className="job_postings">{content}</div>
+        </section>
+      </div>
     </Fragment>
   );
 };
