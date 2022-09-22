@@ -1,7 +1,6 @@
 import React, { Fragment, useCallback, useEffect, useState } from "react";
 import JobListing from "./JobListing";
 import "./JobOpenings.css";
-import { api_token } from "../config/config";
 import { getJobsList } from "../controllers/jobController";
 
 const JobOpenings = () => {

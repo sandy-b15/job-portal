@@ -54,6 +54,10 @@ const SingleJobListing = () => {
     content = error;
   }
 
+  const onClickHandler = () => {
+    
+  }
+
   return (
     <Fragment>
       <div>
@@ -62,7 +66,7 @@ const SingleJobListing = () => {
             <Link to="/" element={<JobOpenings />} className="nav">
               <FaAngleLeft className="backarrow"/>Back
             </Link>
-            <button className="apply-button">Apply</button>
+            <button className="apply-button" onClick = {onClickHandler}>Apply</button>
           </div>
           <div className="jobTitle">
             {content}

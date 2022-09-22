@@ -27,6 +27,16 @@ body {
   letter-spacing: 1px;
 }
 
+.box > nav {
+  background-color: #e36456;
+}
+
+.box > button {
+  background-color: #e36456;
+  border-color: #e36456;
+  letter-spacing: 1px;
+}
+
 .info-card {
   background-image: url("../../images/topSection-new.png");
   background-repeat: no-repeat;
