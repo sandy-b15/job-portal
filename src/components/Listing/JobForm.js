@@ -70,6 +70,17 @@ const JobForm = () => {
           </div>
         </div>
         <div className="row mb-3">
+          <label htmlFor="phone" className="col-sm-3 col-form-label">
+            Resume&nbsp;
+            <sup className="asterisk">
+              <FaAsterisk />
+            </sup>
+          </label>
+          <div className="col-sm-9">
+            <input class="form-control" type="file" id="formFile" />
+          </div>
+        </div>
+        <div className="row mb-3">
           <div className="col-sm-3"></div>
           <div className="col-sm-9">
             <button type="submit" className="apply-button">
