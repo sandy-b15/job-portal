@@ -2,6 +2,7 @@ import React, { Fragment, useCallback, useEffect, useState } from "react";
 import JobListing from "./JobListing";
 import "./JobOpenings.css";
 import { api_token } from "../config/config";
+import Intro from "./Intro";
 
 const JobOpenings = () => {
   const [addJobs, setAddJobs] = useState([]);
@@ -28,14 +29,15 @@ const JobOpenings = () => {
       const loadedJobData = [];
 
       for (const key in data) {
-        // let dom = document.createElement("div");
-        // let frag2 = document
-        //   .createRange()
-        //   .createContextualFragment(data[key].description);
-        // dom.appendChild(frag2);
-        // console.log(dom);
+        // console.log(data[key].description);
+        let dom = document.createElement("div");
+        let frag2 = document
+          .createRange()
+          .createContextualFragment(data[key].description);
+        dom.appendChild(frag2);
+        console.log(dom);
         loadedJobData.push({
-          id: key,
+          id: data[key].id,
           title: data[key].title,
           experience: data[key].experience,
           description: data[key].description,
@@ -63,6 +65,7 @@ const JobOpenings = () => {
   }
   return (
     <Fragment>
+      <Intro />
       <div className="wrapper">
         <section>
           <div className="job-header">

@@ -1,7 +1,15 @@
 import React from "react";
 import "./JobOpenings.css";
+import { useNavigate } from "react-router-dom";
 
 const IndividualJobs = (props) => {
+  const navigate = useNavigate();
+
+  const onClickHandler = () => {
+    let id = props.id;
+
+    navigate(`/job/${id}`);
+  };
   return (
     <li>
       <div className="card job_card">
@@ -13,12 +21,14 @@ const IndividualJobs = (props) => {
           </h6>
           <h6 className="card-subtitle mb-2">Job Description</h6>
           <p className="card-text">
-            {/* Creating a detailed business analysis, outlining problems,
-            opportunities and solution for a business */}
-            {props.description}
+            Creating a detailed business analysis, outlining problems,
+            opportunities and solution for a business
+            {/* {props.description} */}
           </p>
           <div className="btn-actions">
-            <button className="apply-button">Apply</button>
+            <button className="apply-button" onClick={onClickHandler}>
+              Apply
+            </button>
           </div>
         </div>
       </div>
