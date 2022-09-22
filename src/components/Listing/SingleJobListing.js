@@ -4,6 +4,7 @@ import JobOpenings from "../JobOpenings";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SingleJobListing.css";
 import JobForm from "./JobForm";
+import {FaAngleLeft} from "react-icons/fa"
 
 const SingleJobListing = () => {
   let { id } = useParams();
@@ -53,21 +54,25 @@ const SingleJobListing = () => {
     content = error;
   }
 
+  const onClickHandler = () => {
+    
+  }
+
   return (
     <Fragment>
       <div>
         <div className="info-card">
           <div className="box">
             <Link to="/" element={<JobOpenings />} className="nav">
-              Back
+              <FaAngleLeft className="backarrow"/>Back
             </Link>
-            <button className="apply-button">Apply</button>
+            <button className="apply-button" onClick = {onClickHandler}>Apply</button>
           </div>
           <div className="jobTitle">
             {content}
             <h1>{jobDetails.title}</h1>
             <p>
-              {jobDetails.location} , {jobDetails.state}
+              {jobDetails.location} , Karnataka
             </p>
           </div>
           <div className="header-main">
