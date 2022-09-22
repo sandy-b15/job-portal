@@ -1,18 +1,19 @@
-import React, { Fragment } from "react";
-import JobOpenings from "./components/JobOpenings";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SingleJobListing from "./components/Listing/SingleJobListing";
-import { Route, Routes } from "react-router-dom";
+import Home from "./screens/Home";
 
-function App() {
+
+export default function App() {
   return (
-    <Fragment>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<JobOpenings />} />
-        <Route path="/job/:id" element={<SingleJobListing />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/jobDetails/:id" element={<SingleJobListing/>} />
       </Routes>
-    </Fragment>
+    </BrowserRouter>
   );
 }
 
-export default App;
+

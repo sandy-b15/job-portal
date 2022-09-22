@@ -1,14 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./JobOpenings.css";
 import { useNavigate } from "react-router-dom";
 
 const IndividualJobs = (props) => {
-  const navigate = useNavigate();
+  let navigate = useNavigate();
+  const onPress = () => {
+    let id = props.id
+    navigate(`/jobDetails/${id}`, { state: { jobDetails: props } });
 
-  const onClickHandler = () => {
-    let id = props.id;
-
-    navigate(`/job/${id}`);
   };
   return (
     <li>
@@ -26,7 +26,7 @@ const IndividualJobs = (props) => {
             {/* {props.description} */}
           </p>
           <div className="btn-actions">
-            <button className="apply-button" onClick={onClickHandler}>
+            <button className="apply-button" onClick={onPress}>
               Apply
             </button>
           </div>
