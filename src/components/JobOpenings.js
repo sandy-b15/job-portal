@@ -13,7 +13,7 @@ const JobOpenings = () => {
       const response = await fetch(url, {
         method: "GET",
         headers: {
-          Authorization: api_token.token,
+          Authorization: `Bearer ${api_token.token}`,
           "Content-Type": "application/json ",
         },
       });
