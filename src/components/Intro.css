@@ -8,7 +8,7 @@ body {
 .intro_card {
   display: flex;
   justify-content: space-between;
-  background-image: url("../images/topSection-new.png");
+  background-image: url("../images/home-background.png");
 }
 
 .intro_div {
