@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, Fragment } from "react";
+import React, { useEffect, useState, useCallback, Fragment ,useRef } from "react";
 import { useParams, Link, useLocation } from "react-router-dom";
 import JobOpenings from "../components/JobOpenings";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,13 +10,17 @@ function JobDetails(props) {
   const location = useLocation();
   const [error, setError] = useState(null);
   const [jobDetails, setJobdetail] = useState(location.state.jobDetails);
+  const myRef = useRef(null)
+
   console.log("jobDetails", jobDetails);
   let content;
   if (error) {
     content = error;
   }
 
-  const onClickHandler = () => {};
+  const onClickHandler = () => {
+    myRef.current.scrollIntoView()
+  };
 
   console.log(jobDetails.description, "<----");
   return (
@@ -52,7 +56,7 @@ function JobDetails(props) {
         className="header"
         dangerouslySetInnerHTML={{ __html: jobDetails.description }}
       ></div>
-      <JobForm jobId={jobDetails.id} />
+      <JobForm jobId={jobDetails.id} refProp={myRef}/>
     </Fragment>
   );
 }

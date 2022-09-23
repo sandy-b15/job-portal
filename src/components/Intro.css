@@ -6,14 +6,13 @@ body {
 }
 
 .outer_card {
-  background-image: url("../images/home-background.png");
+  background-image: url("../images/topSection-new.png");
   background-repeat: no-repeat;
 }
 
 .intro_card {
   display: flex;
   justify-content: space-between;
-  background-image: url("../images/topSection-new.png");
 }
 
 .intro_div {

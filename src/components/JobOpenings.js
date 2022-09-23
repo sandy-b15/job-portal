@@ -3,7 +3,7 @@ import JobListing from "./JobListing";
 import "./JobOpenings.css";
 import { getJobsList } from "../controllers/jobController";
 
-const JobOpenings = () => {
+const JobOpenings = (props) => {
   const [jobsList, setJobs] = useState(null);
   const [error, setError] = useState(null);
 
@@ -30,7 +30,7 @@ const JobOpenings = () => {
   }
   return (
     <Fragment>
-      <div className="wrapper">
+      <div className="wrapper" ref={props.refProp}>
         <section>
           <div className="job-header">
             <h1>Current Job Openings</h1>
