@@ -4,7 +4,7 @@ import { FaAsterisk } from "react-icons/fa";
 import axios from "axios";
 import { applyJob } from "../../controllers/jobController";
 
-const JobForm = ({ jobId }) => {
+const JobForm = (props) => {
   const [firstName, setFirstName] = useState("test");
   const [lastName, setLastName] = useState("z");
   const [email, setEmail] = useState("testing@gmail.com");
@@ -38,7 +38,7 @@ const JobForm = ({ jobId }) => {
     formData.append("candidate[resumes][]", resume);
 
     try {
-      const response = await applyJob(jobId, formData);
+      const response = await applyJob(props.jobId, formData);
       if (response?.status == "201") {
         alert("Thank you for applying!");
       } else {
@@ -55,7 +55,7 @@ const JobForm = ({ jobId }) => {
   };
 
   return (
-    <div className="job-form">
+    <div className="job-form" ref={props.refProp} >
       <div className="form-header">
         <h2>
           Apply For This Job

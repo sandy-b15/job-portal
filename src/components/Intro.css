@@ -5,6 +5,11 @@ body {
   background-color: white;
 }
 
+.outer_card {
+  background-image: url("../images/home-background.png");
+  background-repeat: no-repeat;
+}
+
 .intro_card {
   display: flex;
   justify-content: space-between;
@@ -45,8 +50,14 @@ body {
   color: #fff !important;
 }
 
-img {
-  width: 42rem;
+.img-logo>img {
+  width: 10rem;
+  margin-left: 5.5rem;
+  padding-top: 2.5rem;
+}
+
+.img_div>img {
+  width: 40rem;
 }
 
 .para {
