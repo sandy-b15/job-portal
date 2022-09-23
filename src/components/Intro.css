@@ -13,11 +13,12 @@ body {
 .intro_card {
   display: flex;
   justify-content: space-between;
+  background-image: url("../images/topSection-new.png");
 }
 
 .intro_div {
   width: 40rem;
-  padding: 4rem 0rem 0 92px;
+  padding: 7rem 0rem 0 92px;
   text-transform: uppercase;
 }
 
@@ -50,7 +51,7 @@ body {
 }
 
 .img-logo>img {
-  width: 6rem;
+  width: 10rem;
   margin-left: 5.5rem;
   padding-top: 2.5rem;
 }

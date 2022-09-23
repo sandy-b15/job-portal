@@ -10,7 +10,7 @@ const SingleJobListing = () => {
   let { id } = useParams();
   const [jobDetails, setJobDetails] = useState({});
   const [error, setError] = useState(null);
-  const myRef = useRef()
+  const myRef = useRef(null)
 
   const fetchSingleJob = useCallback(async () => {
     setError(null);
