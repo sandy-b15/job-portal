@@ -5,10 +5,10 @@ import axios from "axios";
 import { applyJob } from "../../controllers/jobController";
 
 const JobForm = (props) => {
-  const [firstName, setFirstName] = useState("test");
-  const [lastName, setLastName] = useState("z");
-  const [email, setEmail] = useState("testing@gmail.com");
-  const [phone, setPhone] = useState("1234123412");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [resume, setSelectedResume] = useState(null);
   const fileInputRef = React.createRef();
   const handleFirstNameChange = (event) => {
@@ -55,7 +55,7 @@ const JobForm = (props) => {
   };
 
   return (
-    <div className="job-form" ref={props.refProp} >
+    <div className="job-form" ref={props.refProp}>
       <div className="form-header">
         <h2>
           Apply For This Job
@@ -66,18 +66,21 @@ const JobForm = (props) => {
             &nbsp;Required
           </span>
         </h2>
-        <button className="sign-in">Sign in with LinkedIn</button>
+        {/* <button className="sign-in">Sign in with LinkedIn</button> */}
       </div>
       <hr className="horizontal-line" />
       <form className="application-form">
         <div className="row mb-3">
-          <label htmlFor="name" className="col-sm-3 col-form-label">
+          <label
+            htmlFor="name"
+            className="col-sm-3 col-md-3 col-3 col-form-label"
+          >
             First Name&nbsp;
             <sup className="asterisk">
               <FaAsterisk />
             </sup>
           </label>
-          <div className="col-sm-9">
+          <div className="col-sm-9 col-md-9 col-9">
             <input
               type="text"
               className="form-control"
@@ -88,13 +91,16 @@ const JobForm = (props) => {
           </div>
         </div>
         <div className="row mb-3">
-          <label htmlFor="name" className="col-sm-3 col-form-label">
+          <label
+            htmlFor="name"
+            className="col-sm-3 col-md-3 col-3 col-form-label"
+          >
             Last Name&nbsp;
             <sup className="asterisk">
               <FaAsterisk />
             </sup>
           </label>
-          <div className="col-sm-9">
+          <div className="col-sm-9 col-md-9 col-9">
             <input
               type="text"
               className="form-control"
@@ -104,32 +110,18 @@ const JobForm = (props) => {
             />
           </div>
         </div>
-        {/* <div className="row mb-3">
-          <label htmlFor="position" className="col-sm-3 col-form-label">
-            Position Applied&nbsp;
-            <sup className="asterisk">
-              <FaAsterisk />
-            </sup>
-          </label>
-          <div className="col-sm-9">
-            <select
-              class="form-select"
-              aria-label="Default select example"
-              id="position"
-            >
-              <option selected>{}</option>
-            </select>
-          </div>
-        </div> */}
 
         <div className="row mb-3">
-          <label htmlFor="email" className="col-sm-3 col-form-label">
+          <label
+            htmlFor="email"
+            className="col-sm-3 col-md-3 col-3 col-form-label"
+          >
             Email&nbsp;
             <sup className="asterisk">
               <FaAsterisk />
             </sup>
           </label>
-          <div className="col-sm-9">
+          <div className="col-sm-9 col-md-9 col-9">
             <input
               type="email"
               onChange={handleEmailChange}
@@ -140,13 +132,16 @@ const JobForm = (props) => {
           </div>
         </div>
         <div className="row mb-3">
-          <label htmlFor="phone" className="col-sm-3 col-form-label">
+          <label
+            htmlFor="phone"
+            className="col-sm-3 col-md-3 col-3 col-form-label"
+          >
             Phone&nbsp;
             <sup className="asterisk">
               <FaAsterisk />
             </sup>
           </label>
-          <div className="col-sm-9">
+          <div className="col-sm-9 col-md-9 col-9">
             <input
               type="number"
               className="form-control "
@@ -157,15 +152,18 @@ const JobForm = (props) => {
           </div>
         </div>
         <div className="row mb-3">
-          <label htmlFor="phone" className="col-sm-3 col-form-label">
+          <label
+            htmlFor="phone"
+            className="col-sm-3 col-md-3 col-3 col-form-label"
+          >
             Resume&nbsp;
             <sup className="asterisk">
               <FaAsterisk />
             </sup>
           </label>
-          <div className="col-sm-9">
+          <div className="col-sm-9 col-md-9 col-9">
             <input
-              class="form-control"
+              className="form-control"
               type="file"
               id="formFile"
               ref={fileInputRef}
@@ -176,9 +174,8 @@ const JobForm = (props) => {
         </div>
       </form>
       <div className="row mb-3">
-        <div className="col-sm-3"></div>
-        <div className="col-sm-9">
-          <button className="apply-button" onClick={onSubmit}>
+        <div className="col-sm-12 col-md-12 col-12 app-btn">
+          <button className="submit-button" onClick={onSubmit}>
             Submit Application
           </button>
         </div>
