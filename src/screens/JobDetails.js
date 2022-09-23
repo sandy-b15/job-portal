@@ -17,6 +17,8 @@ function JobDetails(props) {
   }
 
   const onClickHandler = () => {};
+
+  console.log(jobDetails.description, "<----");
   return (
     <Fragment>
       <div className="info-card">

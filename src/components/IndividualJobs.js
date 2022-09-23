@@ -4,15 +4,26 @@ import "./JobOpenings.css";
 import { useNavigate } from "react-router-dom";
 
 const IndividualJobs = (props) => {
+  console.log(props.description);
   let navigate = useNavigate();
 
   const onPress = () => {
     let id = props.id;
     navigate(`/jobDetails/${id}`, { state: { jobDetails: props } });
   };
+
+  let string = props.description;
+  let length = 100;
+  let trimmedString = string.substring(0, length);
+  let newString;
+  if (trimmedString.length >= 20) {
+    newString = `${trimmedString}...`;
+  } else {
+    newString = trimmedString;
+  }
   return (
     <li>
-      <div className="card job_card">
+      <div className="card job_card h-90">
         <div className="card-body">
           <h5 className="card-title mb-2">{props.title}</h5>
           <h6 className="card-subtitle mb-4 ">
@@ -29,7 +40,7 @@ const IndividualJobs = (props) => {
             dangerouslySetInnerHTML={{ __html: props.description }}
           ></div>
           <div className="btn-actions">
-            <button className="apply-button" onClick={onPress}>
+            <button className="apply-button mb-auto" onClick={onPress}>
               Apply
             </button>
           </div>
