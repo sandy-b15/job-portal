@@ -1,10 +1,14 @@
 import React from "react";
-import image from "../images/HomePage-Banner.png";
+import image from "../images/home-banner.png";
 import "./Intro.css";
+import logo from "../images/logo.png"
 
 const Intro = () => {
   return (
-    <div>
+    <div className="outer_card">
+      <div className="img-logo">
+        <img src={logo} alt="Lucida's logo"/>
+      </div>
       <div className="intro_card">
         <div className="intro_div">
           <h1>Work with us</h1>
@@ -24,7 +28,7 @@ const Intro = () => {
         creators to be successful
       </p>
     </div>
-  );
+  )
 };
 
 export default Intro;

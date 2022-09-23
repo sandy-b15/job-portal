@@ -7,7 +7,7 @@ class home extends React.Component {
     return (
       <div>
         <Intro />
-        <JobOpenings />
+        <JobOpenings/>
       </div>
     );
   }
