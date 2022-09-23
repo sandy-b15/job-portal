@@ -1,0 +1,9 @@
+.bodycard {
+    height: 360px;
+}
+
+.description-div {
+        height: 100px;
+        overflow: hidden;
+        margin-bottom: 45px;
+}
