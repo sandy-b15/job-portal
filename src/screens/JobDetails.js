@@ -32,7 +32,7 @@ function JobDetails(props) {
   return (
     <Fragment>
       <div className="job_details">
-        <div className="img-logo">
+        <div className="jobPage-logo">
           <img src={logo} alt="Lucida's logo" />
         </div>
         <div className="info-card">
