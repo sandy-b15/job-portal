@@ -8,6 +8,7 @@ body {
 .outer_card {
   background-image: url("../images/topSection-new.png");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .intro_card {
@@ -49,13 +50,13 @@ body {
   color: #fff !important;
 }
 
-.img-logo>img {
+.img-logo > img {
   width: 10rem;
   margin-left: 5.5rem;
   padding-top: 2.5rem;
 }
 
-.img_div>img {
+.img_div > img {
   width: 40rem;
 }
 
