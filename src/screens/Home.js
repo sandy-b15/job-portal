@@ -1,6 +1,7 @@
 import React, { useState , useRef } from "react";
 import Intro from "../components/Intro";
 import JobOpenings from "../components/JobOpenings";
+import "./home.css"
 
 const Home = () => {
 
@@ -14,7 +15,7 @@ const Home = () => {
   }
 
     return (
-      <div>
+      <div className="home">
         <Intro refVal = {clickHandler}/>
         <JobOpenings/>
       </div>

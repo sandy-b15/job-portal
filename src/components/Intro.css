@@ -80,6 +80,39 @@ body {
   letter-spacing: 2px;
 }
 
+@media screen and (max-width : 1200px){
+  .img-logo>img {
+    margin-left: 2rem;
+    width : 9rem;
+  }
+
+  .intro_div {
+    margin-left: 2rem;
+  }
+
+  .para {
+    padding : 2rem 2rem 0 2rem;
+    font-size: 18px;
+  }
+
+  .intro_div>h1 {
+    font-size: 2rem;
+  }
+
+  .intro_div>p {
+    font-size: 14px;
+  }
+
+  .img_div>img {
+    width: 35rem;
+  }
+
+  .positions-btn {
+    font-size: 13px;
+  }
+
+}
+
 @media screen and (max-width : 992px){
   .img-logo>img {
     margin-left: 2rem;
@@ -88,6 +121,7 @@ body {
 
   .intro_div {
     margin-left: 2rem;
+    margin-top: 6rem;
   }
 
   .para {
@@ -130,7 +164,6 @@ body {
 
   .outer_card {
     padding-left: 2rem;
-    background-color: #f8f8f8;
   }
 
   .intro_div>h1 {
@@ -180,5 +213,7 @@ body {
     font-size: 5px;
   }
 
-  
+  .intro_card {
+    background-image: none;
+  }
 }
