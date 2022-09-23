@@ -5,7 +5,6 @@ const axios = require("axios").default;
 export function getApi(pUrl, params) {
   let url = pUrl;
 
-  console.log("url", url);
   return axios.get(url, {
     method: "get",
     headers: {
@@ -14,5 +13,19 @@ export function getApi(pUrl, params) {
     },
     responseType: "json",
     params: params,
+  });
+}
+
+export function postApi(pUrl, data) {
+  let url = pUrl;
+
+  return axios({
+    method: "post",
+    url: url,
+    headers: {
+      "Content-Type": "multipart/form-data",
+      Authorization: `Bearer ${api_token.token}`,
+    },
+    data: data,
   });
 }
