@@ -1,16 +1,22 @@
-import React, { useEffect, useState, useCallback, Fragment , useRef } from "react";
+import React, {
+  useEffect,
+  useState,
+  useCallback,
+  Fragment,
+  useRef,
+} from "react";
 import { useParams, Link } from "react-router-dom";
 import JobOpenings from "../JobOpenings";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SingleJobListing.css";
 import JobForm from "./JobForm";
-import {FaAngleLeft} from "react-icons/fa"
+import { FaAngleLeft } from "react-icons/fa";
 
 const SingleJobListing = () => {
   let { id } = useParams();
   const [jobDetails, setJobDetails] = useState({});
   const [error, setError] = useState(null);
-  const myRef = useRef(null)
+  const myRef = useRef(null);
 
   const fetchSingleJob = useCallback(async () => {
     setError(null);
@@ -56,8 +62,8 @@ const SingleJobListing = () => {
   }
 
   const onClickHandler = () => {
-    myRef.current.scrollIntoView()
-  }
+    myRef.current.scrollIntoView();
+  };
 
   return (
     <Fragment>
@@ -65,16 +71,18 @@ const SingleJobListing = () => {
         <div className="info-card">
           <div className="box">
             <Link to="/" element={<JobOpenings />} className="nav">
-              <FaAngleLeft className="backarrow"/>Back
+              <p>
+                <FaAngleLeft className="backarrow" /> &nbsp; &nbsp; &nbsp;Back
+              </p>
             </Link>
-            <button className="apply-button" onClick = {onClickHandler}>Apply</button>
+            <button className="apply-button" onClick={onClickHandler}>
+              Apply
+            </button>
           </div>
           <div className="jobTitle">
             {content}
             <h1>{jobDetails.title}</h1>
-            <p>
-              {jobDetails.location} , Karnataka
-            </p>
+            <p>{jobDetails.location} , Karnataka</p>
           </div>
           <div className="header-main">
             <h2 className="title">Who We Are</h2>
@@ -115,7 +123,7 @@ const SingleJobListing = () => {
           {/* <p className="para">Roles</p> */}
         </div>
       </div>
-      <JobForm/>
+      <JobForm />
     </Fragment>
   );
 };
