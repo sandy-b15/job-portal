@@ -1,9 +1,9 @@
 import React from "react";
 import "./JobForm.css";
 import { FaAsterisk } from "react-icons/fa";
-const JobForm = () => {
+const JobForm = (props) => {
   return (
-    <div className="job-form">
+    <div className="job-form" ref={props.refProp}>
       <div className="form-header">
         <h2>
           Apply For This Job

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, Fragment } from "react";
+import React, { useEffect, useState, useCallback, Fragment , useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import JobOpenings from "../JobOpenings";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,6 +10,7 @@ const SingleJobListing = () => {
   let { id } = useParams();
   const [jobDetails, setJobDetails] = useState({});
   const [error, setError] = useState(null);
+  const myRef = useRef()
 
   const fetchSingleJob = useCallback(async () => {
     setError(null);
@@ -55,7 +56,7 @@ const SingleJobListing = () => {
   }
 
   const onClickHandler = () => {
-    
+    myRef.current.scrollIntoView()
   }
 
   return (
@@ -114,7 +115,7 @@ const SingleJobListing = () => {
           {/* <p className="para">Roles</p> */}
         </div>
       </div>
-      <JobForm />
+      <JobForm refProp={myRef}/>
     </Fragment>
   );
 };

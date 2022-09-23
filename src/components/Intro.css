@@ -5,15 +5,19 @@ body {
   background-color: white;
 }
 
+.outer_card {
+  background-image: url("../images/home-background.png");
+  background-repeat: no-repeat;
+}
+
 .intro_card {
   display: flex;
   justify-content: space-between;
-  background-image: url("../images/home-background.png");
 }
 
 .intro_div {
   width: 40rem;
-  padding: 7rem 0rem 0 92px;
+  padding: 4rem 0rem 0 92px;
   text-transform: uppercase;
 }
 
@@ -45,8 +49,14 @@ body {
   color: #fff !important;
 }
 
-img {
-  width: 42rem;
+.img-logo>img {
+  width: 6rem;
+  margin-left: 5.5rem;
+  padding-top: 2.5rem;
+}
+
+.img_div>img {
+  width: 40rem;
 }
 
 .para {
