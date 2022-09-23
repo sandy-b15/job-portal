@@ -115,7 +115,7 @@ const SingleJobListing = () => {
           {/* <p className="para">Roles</p> */}
         </div>
       </div>
-      <JobForm refProp={myRef}/>
+      <JobForm/>
     </Fragment>
   );
 };
