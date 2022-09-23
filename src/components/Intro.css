@@ -6,7 +6,6 @@ body {
 }
 
 .outer_card {
-  background-image: url("../images/topSection-new.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -14,6 +13,7 @@ body {
 .intro_card {
   display: flex;
   justify-content: space-between;
+  background-image: url("../images/topSection-new.png");
 }
 
 .intro_div {
@@ -48,6 +48,10 @@ body {
 .pos-button:hover {
   background-color: #da5547 !important;
   color: #fff !important;
+}
+
+.img-logo {
+  background-color:#f8f8f8;
 }
 
 .img-logo > img {
