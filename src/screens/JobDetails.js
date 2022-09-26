@@ -13,12 +13,19 @@ import JobForm from "../components/Listing/JobForm";
 import { FaChevronLeft } from "react-icons/fa";
 
 import logo from "../images/logo.png";
+import LoadingScreen from "../components/LoadingScreen";
 
 function JobDetails(props) {
   const location = useLocation();
   const [error, setError] = useState(null);
   const [jobDetails, setJobdetail] = useState(location.state.jobDetails);
   const myRef = useRef(null);
+
+  const [loading, setLoading] = useState(false);
+
+  const loadingHandler = (loadingValue) => {
+    setLoading(loadingValue);
+  };
 
   console.log("jobDetails", jobDetails);
   let content;
@@ -30,9 +37,9 @@ function JobDetails(props) {
     myRef.current.scrollIntoView();
   };
   return (
-    <Fragment>
+    <LoadingScreen loading={loading}>
       <div className="job_details">
-        <div className="img-logo">
+        <div className="jobPage-logo">
           <img src={logo} alt="Lucida's logo" />
         </div>
         <div className="info-card">
@@ -66,9 +73,13 @@ function JobDetails(props) {
           className="header"
           dangerouslySetInnerHTML={{ __html: jobDetails.description }}
         ></div>
-        <JobForm jobId={jobDetails.id} refProp={myRef} />
+        <JobForm
+          jobId={jobDetails.id}
+          refProp={myRef}
+          onLoading={loadingHandler}
+        />
       </div>
-    </Fragment>
+    </LoadingScreen>
   );
 }
 

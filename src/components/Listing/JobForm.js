@@ -3,14 +3,19 @@ import "./JobForm.css";
 import { FaAsterisk } from "react-icons/fa";
 import axios from "axios";
 import { applyJob } from "../../controllers/jobController";
+import { useEffect } from "react";
 
 const JobForm = (props) => {
   const [firstName, setFirstName] = useState("");
+
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [resume, setSelectedResume] = useState(null);
   const fileInputRef = React.createRef();
+
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
   };
@@ -24,35 +29,104 @@ const JobForm = (props) => {
     setPhone(event.target.value);
   };
 
-  const onSubmit = async () => {
-    // validation goes here
+  const [errors, setErrors] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+  });
 
-    const formData = new FormData();
+  const isFormValid = () => {
+    let isValid = true;
+    let formErrors = { ...errors };
+    console.log(formErrors);
+    if (firstName.trim().length === 0) {
+      formErrors.firstName = "Please enter a first name.";
+    } else {
+      formErrors.firstName = "";
+      console.log(errors);
+    }
 
-    formData.append("candidate[first_name]", firstName);
-    formData.append("candidate[last_name]", lastName);
-    formData.append("candidate[email]", email);
-    formData.append("candidate[mobile]", phone);
-    formData.append("candidate[source_id]", 5000597199);
-    formData.append("candidate[source_category_id]", 5000533866);
-    formData.append("candidate[resumes][]", resume);
+    if (lastName.trim().length === 0) {
+      formErrors.lastName = "Please enter a last name.";
+    } else {
+      formErrors.lastName = "";
+    }
 
-    try {
-      const response = await applyJob(props.jobId, formData);
-      if (response?.status == "201") {
-        alert("Thank you for applying!");
-      } else {
-        console.log(response);
-        alert("Something went wrong!");
+    if (email.trim().length === 0) {
+      formErrors.email = "Please enter a valid email address.";
+    } else if (email.includes("@")) {
+      formErrors.phone = "Please enter a valid phone number.";
+    } else {
+      formErrors.email = "";
+    }
+
+    if (phone.trim().length === 0) {
+      formErrors.phone = "Please enter a valid phone number.";
+    } else if (phone.trim().length > 10) {
+      formErrors.phone = "Please enter a valid phone number.";
+    } else {
+      formErrors.phone = "";
+    }
+    setErrors(formErrors);
+
+    console.log(errors);
+
+    Object.keys(formErrors).forEach((key) => {
+      if (formErrors[key] !== "" && isValid) {
+        isValid = false;
       }
-    } catch (error) {
-      console.log(error);
+      console.log(key);
+    });
+    return isValid;
+  };
+
+  useEffect(() => {
+    props.onLoading(isLoading);
+  }, [isLoading]);
+
+  const onSubmitHandler = async () => {
+    // setIsLoading(true);
+    // validation goes here
+    console.log(isFormValid());
+    if (isFormValid()) {
+      console.log("entered check");
+      //   const formData = new FormData();
+
+      // formData.append("candidate[first_name]", firstName);
+      // formData.append("candidate[last_name]", lastName);
+      // formData.append("candidate[email]", email);
+      // formData.append("candidate[mobile]", phone);
+      // formData.append("candidate[source_id]", 5000597199);
+      // formData.append("candidate[source_category_id]", 5000533866);
+      // formData.append("candidate[resumes][]", resume);
+
+      // try {
+      //   const response = await applyJob(props.jobId, formData);
+      //   if (response?.status == "201") {
+      //     // alert("Thank you for applying!");
+      //     setIsLoading(false);
+      //   } else {
+      //     console.log(response);
+      //     alert("Something went wrong!");
+      //   }
+      // } catch (error) {
+      //   console.log(error);
+      //   setIsLoading(false);
+      // }
     }
   };
+
   const handleFileSelect = (event) => {
     console.log("event", typeof event.target.files[0]);
     setSelectedResume(event.target.files[0]);
   };
+
+  // const fnameInputClasses = firstNameHasError
+  //   ? "form-control invalid"
+  //   : "form-control";
+
+  console.log(errors);
 
   return (
     <div className="job-form" ref={props.refProp}>
@@ -88,6 +162,10 @@ const JobForm = (props) => {
               id="name"
               value={firstName}
             />
+
+            {errors.firstName && (
+              <p className="error-text">{errors.firstName}</p>
+            )}
           </div>
         </div>
         <div className="row mb-3">
@@ -108,6 +186,7 @@ const JobForm = (props) => {
               id="name"
               value={lastName}
             />
+            {errors.lastName && <p className="error-text">{errors.lastName}</p>}
           </div>
         </div>
 
@@ -129,6 +208,7 @@ const JobForm = (props) => {
               id="email"
               value={email}
             />
+            {errors.email && <p className="error-text">{errors.email}</p>}
           </div>
         </div>
         <div className="row mb-3">
@@ -149,6 +229,7 @@ const JobForm = (props) => {
               id="phone"
               value={phone}
             />
+            {errors.phone && <p className="error-text">{errors.phone}</p>}
           </div>
         </div>
         <div className="row mb-3">
@@ -175,7 +256,11 @@ const JobForm = (props) => {
       </form>
       <div className="row mb-3">
         <div className="col-sm-12 col-md-12 col-12 app-btn">
-          <button className="submit-button" onClick={onSubmit}>
+          <button
+            className="submit-button"
+            type="button"
+            onClick={onSubmitHandler}
+          >
             Submit Application
           </button>
         </div>

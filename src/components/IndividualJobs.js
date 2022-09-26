@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./JobOpenings.css";
 import { useNavigate } from "react-router-dom";
-import "./IndividualJobs.css"
+import "./IndividualJobs.css";
 
 const IndividualJobs = (props) => {
-  console.log(props.description);
+  // console.log(props.description);
   let navigate = useNavigate();
 
   const onPress = () => {
@@ -32,9 +32,11 @@ const IndividualJobs = (props) => {
             {props.experience === null ? " Any" : ` ${props.experience}`}
           </h6>
           <h6 className="card-subtitle mb-3">Job Description</h6>
-          <div className="description-div" dangerouslySetInnerHTML={{ __html: props.description }}>
-            </div>
-            <div className="btn-actions">
+          <div
+            className="description-div"
+            dangerouslySetInnerHTML={{ __html: props.description }}
+          ></div>
+          <div className="btn-actions">
             <button className="apply-button mb-auto" onClick={onPress}>
               Apply
             </button>
