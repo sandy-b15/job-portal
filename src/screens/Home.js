@@ -7,9 +7,9 @@ const Home = () => {
 
   const myRef = useRef(null)
 
-  const clickHandler = () => {
+  const clickHandler = (val) => {
 
-    if (true) {
+    if (val) {
       myRef.current.scrollIntoView()
     }
   }
@@ -17,7 +17,7 @@ const Home = () => {
     return (
       <div className="home">
         <Intro refVal = {clickHandler}/>
-        <JobOpenings/>
+        <JobOpenings refProp = {myRef}/>
       </div>
     )
 }
