@@ -31,7 +31,7 @@ const JobOpenings = (props) => {
   return (
     <Fragment>
       <div className="wrapper" ref={props.refProp}>
-        <section>
+        <section className="header-section">
           <div className="job-header">
             <h1>Current Job Openings</h1>
 
