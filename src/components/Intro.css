@@ -18,7 +18,7 @@ body {
 
 .intro_div {
   width: 40rem;
-  margin: 7rem 0rem 0 92px;
+  padding: 7rem 0rem 0 92px;
   text-transform: uppercase;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .img-logo {
-  background-color:#f8f8f8;
+  background-color: #f8f8f8;
 }
 
 .img-logo > img {
@@ -66,8 +66,10 @@ body {
 
 .para {
   font-size: 1.2rem;
-  padding: 4rem 5rem 1rem 5rem;
+  padding: 1rem 5rem 1rem 1rem;
+  margin: 3rem auto;
   width: 90%;
+  /* margin-left: 5rem; */
 }
 
 .apply-button {
@@ -78,142 +80,4 @@ body {
   border-radius: 8px;
   color: #fff;
   letter-spacing: 2px;
-}
-
-@media screen and (max-width : 1200px){
-  .img-logo>img {
-    margin-left: 2rem;
-    width : 9rem;
-  }
-
-  .intro_div {
-    margin-left: 2rem;
-  }
-
-  .para {
-    padding : 2rem 2rem 0 2rem;
-    font-size: 18px;
-  }
-
-  .intro_div>h1 {
-    font-size: 2rem;
-  }
-
-  .intro_div>p {
-    font-size: 14px;
-  }
-
-  .img_div>img {
-    width: 35rem;
-  }
-
-  .positions-btn {
-    font-size: 13px;
-  }
-
-}
-
-@media screen and (max-width : 992px){
-  .img-logo>img {
-    margin-left: 2rem;
-    width: 8rem;
-  }
-
-  .intro_div {
-    margin-left: 2rem;
-    margin-top: 6rem;
-  }
-
-  .para {
-    padding : 2rem 2rem 0 2rem;
-    font-size: 16px;
-  }
-
-  .intro_div>h1 {
-    font-size: 1.8rem;
-  }
-
-  .intro_div>p {
-    font-size: 12px;
-  }
-
-  .img_div>img {
-    width: 30rem;
-  }
-
-  .positions-btn {
-    font-size: 13px;
-  }
-
-}
-
-@media screen and (max-width : 768px){
-  .img-logo>img {
-    margin-left: 0;
-    width: 7rem;
-  }
-
-  .intro_div {
-    margin-left: 0;
-  }
-
-  .para {
-    padding : 3rem 2rem 0 0;
-    font-size: 14px;
-  }
-
-  .outer_card {
-    padding-left: 2rem;
-  }
-
-  .intro_div>h1 {
-    font-size: 1.5rem;
-  }
-
-  .intro_div>p {
-    font-size: 10px;
-  }
-
-  .img_div>img {
-    width: 20rem;
-  }
-
-  .positions-btn {
-    font-size: 8px;
-  }
-
-}
-
-@media screen and (max-width : 600px) {
-  .img-logo>img {
-    width: 5rem;
-  }
-
-  .intro_div {
-    margin-top: 4rem;
-  }
-
-  .para {
-    font-size: 12px;
-  }
-
-  .intro_div>h1 {
-    font-size: 1rem;
-  }
-
-  .intro_div>p {
-    font-size: 8px;
-  }
-
-  .img_div>img {
-    width: 0rem
-  }
-
-  .positions-btn {
-    font-size: 5px;
-  }
-
-  .intro_card {
-    background-image: none;
-  }
 }
