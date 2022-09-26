@@ -11,7 +11,7 @@ section {
 }
 
 .job_card {
-  width: 18rem;
+  width: 22rem;
   /* box-shadow: 0px 1px 8px rgb(0 0 0 / 25%); */
   box-shadow: 0 0 29px -3px #b3b2b2;
   border-radius: 18px !important;
@@ -25,6 +25,7 @@ section {
   display: flex;
   flex-wrap: inherit;
   padding: 0;
+  justify-content: space-between;
 }
 
 .job_postings {
@@ -63,3 +64,80 @@ section {
   color: #fff;
   letter-spacing: 2px;
 }
+
+@media screen and (min-width : 320px) and (max-width : 768px){
+  .new-jobs {
+    justify-content: center;
+    margin-left: 1rem;
+  }
+
+  .job_card {
+    width: 22rem;
+  }
+
+  .job-header>h1 {
+    padding: 0;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width : 768px) and (max-width : 992px){
+
+  .job_card {
+    width: 18rem;
+  }
+
+  .job-header>h1 {
+    padding: 0;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .new-jobs {
+    margin-left: 2rem;
+  }
+
+  section {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media screen and  (min-width : 992px) and (max-width : 1200px) {
+  .job_card {
+    width: 16rem;
+  }
+
+  .job-header>h1 {
+    padding: 0;
+    margin-left: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .new-jobs {
+    margin-left: 2rem;
+  }
+
+  section {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width : 1200px) and (max-width : 1315px) {
+  .job_card {
+    width: 16rem;
+  }
+  
+}
+
+
+  
+
+

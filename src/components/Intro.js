@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import image from "../images/home-banner.png";
 import "./Intro.css";
 import logo from "../images/logo.png"
 
-const Intro = () => {
+const Intro = (props) => {
+
+  const [clicked , setClicked] = useState(false)
+
+  const onClickHandler = () => {
+    setClicked(true)
+    props.refVal = clicked
+  }
+
   return (
     <div className="outer_card">
       <div className="img-logo">
@@ -14,7 +22,7 @@ const Intro = () => {
           <h1>Work with us</h1>
           <p>Join Our Team And Help Shape the Future</p>
           <div className="button-actions">
-            <button className="apply-button">See Open Positions</button>
+            <button className="apply-button positions-btn" onClick={onClickHandler}>See Open Positions</button>
           </div>
         </div>
 
