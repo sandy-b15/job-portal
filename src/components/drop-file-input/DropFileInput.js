@@ -55,25 +55,31 @@ const DropFileInput = (props) => {
         <div className="drop-file-preview">
           <p className="drop-file-preview__title">Ready to upload</p>
           {fileList.map((item, index) => (
-            <div key={index} className="drop-file-preview__item">
-              <img
-                src={
-                  ImageConfig[item.type.split("/")[1]] || ImageConfig["default"]
-                }
-                alt=""
-              />
-              <div className="drop-file-preview__item__info">
+            <div
+              key={index}
+              className="drop-file-preview__item row upload-file"
+            >
+              <div className="col-sm-2 col-md-2 col-2">
+                <img
+                  src={
+                    ImageConfig[item.type.split("/")[1]] ||
+                    ImageConfig["default"]
+                  }
+                  alt=""
+                />
+              </div>
+              <div className="col-sm-9 col-md-9 col-9 drop-file-preview__item__info">
                 <p>
                   {item.name} <br />
-                  {item.size}B
+                  {(item.size / (1024 * 1024)).toFixed(2)}MB
                 </p>
               </div>
-              <span
-                className="drop-file-preview__item__del"
+              <div
+                className="col-sm-1 col-md-1 col-1 drop-file-preview__item__del"
                 onClick={() => fileRemove(item)}
               >
                 <FaTrashAlt className="del-file" />
-              </span>
+              </div>
             </div>
           ))}
         </div>
