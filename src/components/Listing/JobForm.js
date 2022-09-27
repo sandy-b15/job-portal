@@ -5,6 +5,8 @@ import axios from "axios";
 import { applyJob } from "../../controllers/jobController";
 import { useEffect } from "react";
 
+import DropFileInput from "../drop-file-input/DropFileInput";
+
 const JobForm = (props) => {
   const [firstName, setFirstName] = useState("");
 
@@ -35,6 +37,19 @@ const JobForm = (props) => {
     email: "",
     phone: "",
   });
+
+  const clearInputData = () => {
+    setErrors({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+    });
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhone("");
+  };
 
   const isFormValid = () => {
     let isValid = true;
@@ -78,6 +93,9 @@ const JobForm = (props) => {
       }
       console.log(key);
     });
+    // if (isValid === false) {
+    //   setIsLoading(false);
+    // }
     return isValid;
   };
 
@@ -86,47 +104,49 @@ const JobForm = (props) => {
   }, [isLoading]);
 
   const onSubmitHandler = async () => {
-    // setIsLoading(true);
     // validation goes here
     console.log(isFormValid());
     if (isFormValid()) {
+      setIsLoading(true);
       console.log("entered check");
-      //   const formData = new FormData();
+      const formData = new FormData();
 
-      // formData.append("candidate[first_name]", firstName);
-      // formData.append("candidate[last_name]", lastName);
-      // formData.append("candidate[email]", email);
-      // formData.append("candidate[mobile]", phone);
-      // formData.append("candidate[source_id]", 5000597199);
-      // formData.append("candidate[source_category_id]", 5000533866);
-      // formData.append("candidate[resumes][]", resume);
+      formData.append("candidate[first_name]", firstName);
+      formData.append("candidate[last_name]", lastName);
+      formData.append("candidate[email]", email);
+      formData.append("candidate[mobile]", phone);
+      formData.append("candidate[source_id]", 5000597199);
+      formData.append("candidate[source_category_id]", 5000533866);
+      formData.append("candidate[resumes][]", resume);
 
-      // try {
-      //   const response = await applyJob(props.jobId, formData);
-      //   if (response?.status == "201") {
-      //     // alert("Thank you for applying!");
-      //     setIsLoading(false);
-      //   } else {
-      //     console.log(response);
-      //     alert("Something went wrong!");
-      //   }
-      // } catch (error) {
-      //   console.log(error);
-      //   setIsLoading(false);
-      // }
+      try {
+        const response = await applyJob(props.jobId, formData);
+        if (response?.status == "201") {
+          alert("Thank you for applying!");
+          setIsLoading(false);
+          clearInputData();
+        } else {
+          console.log(response);
+          alert("Something went wrong!");
+        }
+      } catch (error) {
+        console.log(error);
+        setIsLoading(false);
+      }
     }
   };
 
-  const handleFileSelect = (event) => {
-    console.log("event", typeof event.target.files[0]);
-    setSelectedResume(event.target.files[0]);
-  };
+  // const handleFileSelect = (event) => {
+  //   console.log("event", typeof event.target.files[0]);
 
-  // const fnameInputClasses = firstNameHasError
-  //   ? "form-control invalid"
-  //   : "form-control";
+  // };
 
   console.log(errors);
+
+  const onFileChange = (files) => {
+    console.log(files);
+    setSelectedResume(files);
+  };
 
   return (
     <div className="job-form" ref={props.refProp}>
@@ -242,7 +262,7 @@ const JobForm = (props) => {
               <FaAsterisk />
             </sup>
           </label>
-          <div className="col-sm-9 col-md-9 col-9">
+          {/* <div className="col-sm-9 col-md-9 col-9">
             <input
               className="form-control"
               type="file"
@@ -251,6 +271,9 @@ const JobForm = (props) => {
               // value={resume}
               onChange={handleFileSelect}
             />
+          </div> */}
+          <div className="col-sm-9 col-md-9 col-9">
+            <DropFileInput onFileChange={(files) => onFileChange(files)} />
           </div>
         </div>
       </form>
