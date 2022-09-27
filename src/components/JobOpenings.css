@@ -139,6 +139,7 @@ section {
   .wrapper {
     margin-top: 4rem;
     margin-left: 2rem;
+    margin-bottom: 0rem;
     padding-bottom: 5rem;
   }
 
@@ -233,8 +234,8 @@ section {
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1400px) {
-  .new-jobs li {
+@media screen and (min-width: 1200px) and (max-width: 2400px) {
+  .new-jobs {
     justify-content: flex-start;
   }
 }
