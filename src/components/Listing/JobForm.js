@@ -93,9 +93,7 @@ const JobForm = (props) => {
       }
       console.log(key);
     });
-    // if (isValid === false) {
-    //   setIsLoading(false);
-    // }
+
     return isValid;
   };
 
@@ -136,15 +134,7 @@ const JobForm = (props) => {
     }
   };
 
-  // const handleFileSelect = (event) => {
-  //   console.log("event", typeof event.target.files[0]);
-
-  // };
-
-  console.log(errors);
-
   const onFileChange = (files) => {
-    console.log(files);
     setSelectedResume(files);
   };
 
@@ -262,16 +252,7 @@ const JobForm = (props) => {
               <FaAsterisk />
             </sup>
           </label>
-          {/* <div className="col-sm-9 col-md-9 col-9">
-            <input
-              className="form-control"
-              type="file"
-              id="formFile"
-              ref={fileInputRef}
-              // value={resume}
-              onChange={handleFileSelect}
-            />
-          </div> */}
+
           <div className="col-sm-9 col-md-9 col-9">
             <DropFileInput onFileChange={(files) => onFileChange(files)} />
           </div>
