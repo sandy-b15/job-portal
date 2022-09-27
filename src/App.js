@@ -1,6 +1,4 @@
-import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SingleJobListing from "./components/Listing/SingleJobListing";
 import Home from "./screens/Home";
 import JobDetails from "./screens/JobDetails";
 

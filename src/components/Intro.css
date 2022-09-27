@@ -8,24 +8,25 @@ body {
 .outer_card {
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url("../images/topSection-new.png");
+  height: 37rem;
+  padding-left: 6rem;
 }
 
 .intro_card {
   display: flex;
-  justify-content: space-between;
-  background-image: url("../images/topSection-new.png");
+  justify-content: space-between;  
 }
 
 .intro_div {
   width: 40rem;
-  margin: 7rem 0rem 0 92px;
+  margin-top: 7rem;
   text-transform: uppercase;
 }
 
 .intro_div > h1 {
   color: #4e4e4e;
   font-weight: 600;
-  margin: 0;
 }
 
 .intro_div > p {
@@ -35,28 +36,18 @@ body {
   margin-bottom: 37px;
 }
 
-.pos-button {
-  padding: 10px 20px;
-  background-color: #e36456;
-  font-size: 12px;
-  border: #e36456;
-  letter-spacing: 1px;
-  border-radius: 8px;
-  color: #fff;
-}
 
-.pos-button:hover {
+.apply-button:hover {
   background-color: #da5547 !important;
   color: #fff !important;
 }
 
 .img-logo {
-  background-color:#f8f8f8;
+  background-color: #f8f8f8;
 }
 
 .img-logo > img {
   width: 10rem;
-  margin-left: 5.5rem;
   padding-top: 2.5rem;
 }
 
@@ -66,8 +57,9 @@ body {
 
 .para {
   font-size: 1.2rem;
-  padding: 4rem 5rem 1rem 5rem;
+  padding: 4rem 5rem 1rem 0;
   width: 90%;
+  /* margin-left: 5rem; */
 }
 
 .apply-button {
@@ -81,17 +73,17 @@ body {
 }
 
 @media screen and (max-width : 1200px){
+
+  .outer_card {
+    padding-left: 3rem;
+  }
+
   .img-logo>img {
-    margin-left: 2rem;
     width : 9rem;
   }
 
-  .intro_div {
-    margin-left: 2rem;
-  }
-
   .para {
-    padding : 2rem 2rem 0 2rem;
+    padding : 2rem 2rem 0 0;
     font-size: 18px;
   }
 
@@ -107,25 +99,28 @@ body {
     width: 35rem;
   }
 
-  .positions-btn {
+  .apply-button {
     font-size: 13px;
   }
 
 }
 
 @media screen and (max-width : 992px){
+
+  .outer_card {
+    padding-left: 2rem;
+  }
+
   .img-logo>img {
-    margin-left: 2rem;
     width: 8rem;
   }
 
   .intro_div {
-    margin-left: 2rem;
     margin-top: 6rem;
   }
 
   .para {
-    padding : 2rem 2rem 0 2rem;
+    padding: 3rem 0;
     font-size: 16px;
   }
 
@@ -141,7 +136,7 @@ body {
     width: 30rem;
   }
 
-  .positions-btn {
+  .apply-button {
     font-size: 13px;
   }
 
@@ -149,21 +144,17 @@ body {
 
 @media screen and (max-width : 768px){
   .img-logo>img {
-    margin-left: 0;
     width: 7rem;
   }
 
-  .intro_div {
-    margin-left: 0;
-  }
-
   .para {
-    padding : 3rem 2rem 0 0;
     font-size: 14px;
   }
 
   .outer_card {
-    padding-left: 2rem;
+    padding-left: 0;
+    margin-left: 2rem;
+    background-color: #f8f8f8;
   }
 
   .intro_div>h1 {
@@ -178,8 +169,12 @@ body {
     width: 20rem;
   }
 
-  .positions-btn {
+  .apply-button {
     font-size: 8px;
+  }
+
+  .outer_card {
+    height: 30rem;
   }
 
 }
@@ -209,11 +204,15 @@ body {
     width: 0rem
   }
 
-  .positions-btn {
-    font-size: 5px;
+  .apply-button {
+    font-size: 7px;
   }
 
   .intro_card {
     background-image: none;
+  }
+
+  .outer_card {
+    height: 25rem;
   }
 }

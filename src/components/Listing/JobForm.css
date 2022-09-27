@@ -3,7 +3,7 @@
 .job-form {
   margin: 3rem auto;
   padding: 5rem;
-  width: 80%;
+  width: 58%;
   background: #f6f6f6;
   font-family: "Poppins";
 }
@@ -21,8 +21,11 @@
 }
 .application-form {
   padding: 2rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 60%;
   margin: 0 auto;
+  margin-right: 0;
 }
 .required {
   font-size: 1.2rem;
@@ -54,6 +57,26 @@
   border-radius: 8px;
   color: #fff;
   letter-spacing: 2px;
+}
+
+.invalid input {
+  border: 1px solid #b40e0e;
+  background-color: #fddddd;
+}
+
+.invalid input:focus {
+  border-color: #ff8800;
+  background-color: #fbe8d2;
+}
+
+.error-text {
+  color: #b40e0e;
+  margin: 0;
+  font-size: 14px;
+}
+
+.col-form-label {
+  text-align: end;
 }
 
 /* Media Queries */

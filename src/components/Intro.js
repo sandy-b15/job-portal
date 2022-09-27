@@ -5,11 +5,8 @@ import logo from "../images/logo.png"
 
 const Intro = (props) => {
 
-  const [clicked , setClicked] = useState(false)
-
   const onClickHandler = () => {
-    setClicked(true)
-    props.refVal = clicked
+    props.refVal(true)
   }
 
   return (
@@ -22,7 +19,7 @@ const Intro = (props) => {
           <h1>Work with us</h1>
           <p>Join Our Team And Help Shape the Future</p>
           <div className="button-actions">
-            <button className="apply-button positions-btn" onClick={onClickHandler}>See Open Positions</button>
+            <button className="apply-button" onClick={onClickHandler}>See Open Positions</button>
           </div>
         </div>
 
@@ -36,6 +33,7 @@ const Intro = (props) => {
         creators to be successful
       </p>
     </div>
+  
   )
 };
 
