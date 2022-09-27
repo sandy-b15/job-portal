@@ -2,6 +2,7 @@
 
 .job-form {
   margin: 3rem auto;
+  margin-bottom: 5rem;
   padding: 5rem;
   width: 58%;
   background: #f6f6f6;
@@ -88,6 +89,7 @@
 @media screen and (min-width: 320px) and (max-width: 992px) {
   .job-form {
     margin: 0;
+    margin-bottom: 5rem;
     padding: 0px;
     width: 100%;
   }

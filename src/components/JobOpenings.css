@@ -123,6 +123,7 @@ section {
 }
 }
 
+
 @media screen and (max-width : 768px){
 
   .job_card {
@@ -140,6 +141,7 @@ section {
   .wrapper{
     margin-top: 4rem;
     margin-left: 2rem;
+    padding-bottom: 5rem;
   }
 
   .apply-button {
@@ -194,9 +196,10 @@ section {
 }
 }
 
-@media screen and (max-width : 425px){
-  .job_card {
-    width: 15rem;
+@media screen and (max-width : 520px){
+
+  .new-jobs {
+    justify-content: center;
   }
 
   .card-title {
@@ -228,7 +231,11 @@ section {
 }
 }
 
-
+@media screen and (max-width : 320px){
+  .job_card {
+    width: 17rem;
+  }
+}
 
 
 
