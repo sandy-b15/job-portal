@@ -68,24 +68,26 @@ section {
   color: #fff;
   letter-spacing: 2px;
 }
+.wrapper {
+  margin-bottom: 8rem;
+}
 
-@media screen and (min-width : 1200px) and (max-width : 1275px) {
+@media screen and (min-width: 1200px) and (max-width: 1275px) {
   .job_card {
     width: 20rem;
   }
-  
-} 
+}
 
-@media screen and (max-width : 1200px) {
+@media screen and (max-width: 1200px) {
   .job_card {
     width: 16rem;
   }
 
-  .job-header>h1 {
+  .job-header > h1 {
     font-size: 1.8rem;
   }
 
-  .wrapper{
+  .wrapper {
     margin-top: 8rem;
     margin-left: 3rem;
   }
@@ -96,21 +98,19 @@ section {
 
   .bodycard {
     height: 335px;
-}
-  
+  }
 }
 
-@media screen and (max-width : 992px){
-
+@media screen and (max-width: 992px) {
   .job_card {
     width: 19rem;
   }
 
-  .job-header>h1 {
+  .job-header > h1 {
     font-size: 1.5rem;
   }
 
-  .wrapper{
+  .wrapper {
     margin-top: 6rem;
     margin-left: 2rem;
   }
@@ -121,12 +121,10 @@ section {
 
   .bodycard {
     height: 327px;
+  }
 }
-}
 
-
-@media screen and (max-width : 768px){
-
+@media screen and (max-width: 768px) {
   .job_card {
     width: 15rem;
   }
@@ -135,11 +133,11 @@ section {
     font-size: 18px;
   }
 
-  .job-header>h1 {
+  .job-header > h1 {
     font-size: 1.3rem;
   }
 
-  .wrapper{
+  .wrapper {
     margin-top: 4rem;
     margin-left: 2rem;
     padding-bottom: 5rem;
@@ -156,14 +154,14 @@ section {
 
   .bodycard {
     height: 320px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+  }
 }
 
-.card-subtitle {
-  font-size: 14px;
-}
-}
-
-@media screen and (max-width : 600px){
+@media screen and (max-width: 600px) {
   .job_card {
     width: 20rem;
   }
@@ -172,10 +170,9 @@ section {
     font-size: 18px;
   }
 
-  .job-header>h1 {
+  .job-header > h1 {
     font-size: 1.2rem;
   }
-
 
   .apply-button {
     font-size: 10px !important;
@@ -187,19 +184,18 @@ section {
 
   .bodycard {
     height: 318px;
+  }
+
+  .card-subtitle {
+    font-size: 12px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
 }
 
-.card-subtitle {
-  font-size: 12px;
-}
-
-.card-title {
-  font-size: 16px;
-}
-}
-
-@media screen and (max-width : 520px){
-
+@media screen and (max-width: 520px) {
   .new-jobs {
     justify-content: center;
   }
@@ -208,10 +204,10 @@ section {
     font-size: 18px;
   }
 
-  .job-header>h1 {
+  .job-header > h1 {
     font-size: 1.2rem;
   }
-  
+
   .apply-button {
     font-size: 10px !important;
   }
@@ -222,24 +218,24 @@ section {
 
   .bodycard {
     height: 312px;
+  }
+
+  .card-subtitle {
+    font-size: 12px;
+  }
+
+  .card-title {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .job_card {
+    width: 17rem;
+  }
 }
 
-.card-subtitle {
-  font-size: 12px;
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+  .new-jobs{
+    justify-content: flex-start;
+  }
 }
-
-.card-title {
-  font-size: 14px;
-}
-}
-
-
-
-
-
-
-
-
-  
-
-
