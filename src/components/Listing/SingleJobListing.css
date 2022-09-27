@@ -64,6 +64,7 @@ body {
 .jobTitle > h1 {
   font-size: 2rem;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .jobTitle > p {
@@ -93,7 +94,7 @@ body {
 }
 
 .header-main {
-  margin: 13rem 0 4rem 5rem;
+  margin: 6rem 0 4rem 5rem;
 }
 
 .paragraph {
@@ -116,6 +117,10 @@ body {
   margin-left: 5.5rem;
   padding-top: 2.5rem;
 }
+
+.job_details {
+  padding-bottom: 8rem;
+}
 /* Media Queries */
 
 @media screen and (min-width: 320px) and (max-width: 992px) {
@@ -126,6 +131,7 @@ body {
   .job_details {
     background-color: #f8f8f8;
     padding: 20px;
+    padding-left: 2rem;
   }
 
   .box {
@@ -167,7 +173,7 @@ body {
     font-size: 1.2rem;
   }
   .header-main {
-    margin-top: 10rem;
+    margin-top: 8rem;
   }
 
   .header-main > p {
@@ -203,7 +209,7 @@ body {
   }
 
   .header-main {
-    margin-top: 8rem;
+    margin-top: 6rem;
   }
   .header-main > p {
     font-size: 14px;
@@ -239,7 +245,7 @@ body {
   }
 
   .header-main {
-    margin-top: 6rem;
+    margin-top: 4rem;
   }
 
   .header-main > p {
