@@ -2,7 +2,6 @@
 
 .job-form {
   margin: 3rem auto;
-  margin-bottom: 5rem;
   padding: 5rem;
   width: 58%;
   background: #f6f6f6;
@@ -80,6 +79,12 @@
   text-align: end;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+
 /* Media Queries */
 @media screen and (min-width: 993px) {
   .application-form {
@@ -89,7 +94,6 @@
 @media screen and (min-width: 320px) and (max-width: 992px) {
   .job-form {
     margin: 0;
-    margin-bottom: 5rem;
     padding: 0px;
     width: 100%;
   }
@@ -174,7 +178,7 @@
     padding-right: 0;
   }
   .form-control {
-    font-size: 12px;
+    font-size: 12 px;
   }
 
   #formFile {

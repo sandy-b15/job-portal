@@ -19,7 +19,7 @@ const Intro = (props) => {
           <h1>Work with us</h1>
           <p>Join Our Team And Help Shape the Future</p>
           <div className="button-actions">
-            <button className="apply-button" onClick={onClickHandler}>See Open Positions</button>
+            <button className="apply-button " onClick={onClickHandler}>See Open Positions</button>
           </div>
         </div>
 
