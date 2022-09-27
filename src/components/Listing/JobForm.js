@@ -19,6 +19,8 @@ const JobForm = (props) => {
   const [resume, setSelectedResume] = useState(null);
   const fileInputRef = React.createRef();
 
+  let fileSize
+
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFirstNameChange = (event) => {
@@ -39,6 +41,7 @@ const JobForm = (props) => {
     lastName: "",
     email: "",
     phone: "",
+    file: ""
   });
 
   const clearInputData = () => {
@@ -47,11 +50,13 @@ const JobForm = (props) => {
       lastName: "",
       email: "",
       phone: "",
+      file: ""
     });
     setFirstName("");
     setLastName("");
     setEmail("");
     setPhone("");
+    setSelectedResume(null)
   };
 
   const isFormValid = () => {
@@ -86,6 +91,18 @@ const JobForm = (props) => {
     } else {
       formErrors.phone = "";
     }
+
+    if (resume === null) {
+      formErrors.file = "Please add resume";
+    } else if (resume.type != "application/pdf") {
+      formErrors.file = "Please enter pdf file"
+    } else if ((resume.size/ (1024*1024)).toFixed(2) > 2) {
+      formErrors.file = "Minimum file size is 2MB"
+    }
+    else {
+      formErrors.file = ""
+    }
+
     setErrors(formErrors);
 
     console.log(errors);
@@ -266,7 +283,11 @@ const JobForm = (props) => {
 
           <div className="col-sm-8 col-md-8 col-8">
             <DropFileInput onFileChange={(files) => onFileChange(files)} />
+            {errors.file && (
+              <p className="error-text">{errors.file}</p>
+            )}
           </div>
+          
         </div>
       </form>
       <div className="row mb-3">
