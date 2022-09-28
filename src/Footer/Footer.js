@@ -16,23 +16,23 @@ const Footer = () => {
                 <h1>COMPANY</h1>
                 <ul className="social-icons">
                   <li>
-                    <a className="facebook" href="about">
+                    <a className="facebook">
                       <p>About</p>
                     </a>
                   </li>
                   <li>
-                    <a className="google" href="index#services">
+                    <a className="google">
                       <p>Services</p>
                     </a>
                   </li>
 
                   <li>
-                    <a className="skype" href="blogs">
+                    <a className="skype">
                       <p>Blogs/White Paper</p>
                     </a>
                   </li>
                   <li>
-                    <a className="skype" href="contact.php">
+                    <a className="skype">
                       <p>Contact Us</p>
                     </a>
                   </li>
