@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import Intro from "../components/Intro";
 import JobOpenings from "../components/JobOpenings";
+import "../components/home.css"
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./home.css";
 import Footer from "../Footer/Footer";
 
 const Home = () => {

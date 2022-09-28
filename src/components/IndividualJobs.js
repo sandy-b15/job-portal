@@ -41,7 +41,7 @@ const IndividualJobs = (props) => {
           </button>
         </div>
       </div>
-    </div>
+      </div>
   );
 };
 

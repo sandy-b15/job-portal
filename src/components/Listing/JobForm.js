@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./JobForm.css";
 import { FaAsterisk } from "react-icons/fa";
-import axios from "axios";
 import { applyJob } from "../../controllers/jobController";
 import { useEffect } from "react";
 
@@ -18,8 +17,8 @@ const JobForm = (props) => {
   const [phone, setPhone] = useState("");
   const [resume, setSelectedResume] = useState(null);
   const fileInputRef = React.createRef();
-
-  let fileSize
+  const fileFormats = ["application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/pdf"];
+  let fileSize, isFileFormatValid
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -62,12 +61,11 @@ const JobForm = (props) => {
   const isFormValid = () => {
     let isValid = true;
     let formErrors = { ...errors };
-    console.log(formErrors);
+
     if (firstName.trim().length === 0) {
       formErrors.firstName = "Please enter a first name.";
     } else {
       formErrors.firstName = "";
-      console.log(errors);
     }
 
     if (lastName.trim().length === 0) {
@@ -93,11 +91,11 @@ const JobForm = (props) => {
     }
 
     if (resume === null) {
-      formErrors.file = "Please add resume";
-    } else if (resume.type != "application/pdf") {
-      formErrors.file = "Please enter pdf file"
-    } else if ((resume.size/ (1024*1024)).toFixed(2) > 2) {
-      formErrors.file = "Minimum file size is 2MB"
+      formErrors.file = "Please upload resume";
+    } else if (!isFileFormatValid) {
+      formErrors.file = "Please upload valid file"
+    } else if (fileSize > 2) {
+      formErrors.file = "Maximum file size is 2MB"
     }
     else {
       formErrors.file = ""
@@ -105,13 +103,10 @@ const JobForm = (props) => {
 
     setErrors(formErrors);
 
-    console.log(errors);
-
     Object.keys(formErrors).forEach((key) => {
       if (formErrors[key] !== "" && isValid) {
         isValid = false;
       }
-      console.log(key);
     });
 
     return isValid;
@@ -123,7 +118,11 @@ const JobForm = (props) => {
 
   const onSubmitHandler = async () => {
     // validation goes here
-    console.log(isFormValid());
+    if (resume != null) {
+      isFileFormatValid = fileFormats.includes(resume.type)
+      fileSize = (resume.size / (1024 * 1024)).toFixed(2)
+    }
+
     if (isFormValid()) {
       setIsLoading(true);
       console.log("entered check");
@@ -139,7 +138,8 @@ const JobForm = (props) => {
 
       try {
         const response = await applyJob(props.jobId, formData);
-        if (response?.status == "201") {
+        if (response?.status === "201") {
+          alert("Thank you for applying!");
           setIsLoading(false);
           toast.success("Thank you for applying!", {
             position: "top-right",
@@ -156,7 +156,6 @@ const JobForm = (props) => {
           toast.error("Something went wrong!");
         }
       } catch (error) {
-        console.log(error);
         setIsLoading(false);
       }
     }
@@ -287,7 +286,7 @@ const JobForm = (props) => {
               <p className="error-text">{errors.file}</p>
             )}
           </div>
-          
+
         </div>
       </form>
       <div className="row mb-3">
