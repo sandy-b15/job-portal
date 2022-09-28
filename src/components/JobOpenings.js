@@ -34,8 +34,6 @@ const JobOpenings = (props) => {
         <section className="header-section">
           <div className="job-header">
             <h1>Current Job Openings</h1>
-
-            <main></main>
           </div>
           <div className="job_postings">{content}</div>
         </section>
