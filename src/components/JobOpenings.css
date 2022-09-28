@@ -6,12 +6,9 @@
   margin-left: 6rem;
   margin-bottom: 8rem;
 }
-section {
-  width: 95%;
-}
 
 .job_card {
-  width: 22rem;
+  width: 20rem;
   /* box-shadow: 0px 1px 8px rgb(0 0 0 / 25%); */
   box-shadow: 0 0 29px -3px #b3b2b2;
   border-radius: 18px !important;
@@ -42,7 +39,7 @@ section {
 }
 
 .bodycard {
-  height: 360px;
+  height: 342px;
 }
 
 .job-header > h1 {
@@ -103,7 +100,7 @@ section {
 
 @media screen and (max-width: 992px) {
   .job_card {
-    width: 19rem;
+    width: 18rem;
   }
 
   .job-header > h1 {
@@ -234,7 +231,6 @@ section {
     width: 17rem;
   }
 }
-
 
 @media screen and (min-width: 1200px) and (max-width: 2400px) {
   .new-jobs {

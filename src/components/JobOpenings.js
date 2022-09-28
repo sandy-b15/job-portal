@@ -8,7 +8,7 @@ const JobOpenings = (props) => {
   const [error, setError] = useState(null);
 
   const fetchJobDetailsHandler = async () => {
-    const resp = await getJobsList({ status: "published", remote: false });
+    const resp = await getJobsList({ status: "published" });
 
     setJobs(resp);
   };
