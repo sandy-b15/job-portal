@@ -72,11 +72,6 @@ section {
   margin-bottom: 8rem;
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1275px) {
-  .job_card {
-    width: 20rem;
-  }
-}
 
 @media screen and (max-width: 1200px) {
   .job_card {
@@ -234,8 +229,68 @@ section {
   }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1400px) {
+@media screen and (min-width: 992px) and (max-width: 1440px) {
   .new-jobs{
     justify-content: flex-start;
   }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1350px) {
+  .job_card {
+    width: 20rem;
+  }
+}
+
+@media screen and (min-width: 1350px) and (max-width: 1450px) {
+  .job_card {
+    width: 23rem;
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1200px) {
+  .job_card {
+    width: 19rem;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1100px) {
+  .job_card {
+    width: 26rem;
+  }
+
+  .bodycard {
+    height: 360px;
+}
+}
+
+@media screen and (min-width: 845px) and (max-width: 992px) {
+  .job_card {
+    width: 22rem;
+  }
+
+  .bodycard {
+    height: 343px;
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 845px) {
+  .job_card {
+    width: 20rem;
+  }
+}
+
+@media screen and (min-width: 650px) and (max-width: 767px) {
+  .job_card {
+    width: 17rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 650px) {
+  .job_card {
+    width: 15rem;
+  }
+
+  .bodycard {
+    height: 341px;
+}
 }

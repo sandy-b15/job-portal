@@ -1,7 +1,7 @@
 import React, { useState , useRef } from "react";
 import Intro from "../components/Intro";
 import JobOpenings from "../components/JobOpenings";
-import "./home.css"
+import "../components/home.css"
 
 const Home = () => {
 

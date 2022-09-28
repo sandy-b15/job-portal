@@ -1,11 +1,8 @@
 import React, {
-  useEffect,
   useState,
-  useCallback,
-  Fragment,
   useRef,
 } from "react";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import JobOpenings from "../components/JobOpenings";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/Listing/SingleJobListing.css";
@@ -27,7 +24,6 @@ function JobDetails(props) {
     setLoading(loadingValue);
   };
 
-  console.log("jobDetails", jobDetails);
   let content;
   if (error) {
     content = error;
