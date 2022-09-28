@@ -198,6 +198,10 @@ ul.footer-nav li {
     font-size: 13px;
   }
 
+  .copyright-section {
+    text-align: center;
+  }
+
   .social-widget ul.social-icons li a {
     font-size: 1em;
   }
