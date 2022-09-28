@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import { useParams, Link } from "react-router-dom";
 import JobOpenings from "../JobOpenings";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./SingleJobListing.css";
 import JobForm from "./JobForm";
 import { FaAngleLeft } from "react-icons/fa";

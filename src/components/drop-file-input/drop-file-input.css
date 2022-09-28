@@ -68,10 +68,15 @@
 .drop-file-preview__item__info {
   margin-top: 1rem;
   margin-bottom: 0;
+  padding-left: 0;
+}
+
+.drop-file-preview__item__info p {
+  overflow: hidden;
 }
 
 .drop-file-preview__item__del {
-  width: 40px;
+  /* width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -79,7 +84,8 @@
   position: absolute;
   right: 10px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); */
+  text-align: end;
   cursor: pointer;
 }
 
@@ -89,6 +95,10 @@
 
 .del-file {
   color: red;
+}
+
+.upload-file {
+  justify-items: center;
 }
 
 /* Media Queries */

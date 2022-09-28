@@ -6,6 +6,9 @@ import { useEffect } from "react";
 
 import DropFileInput from "../drop-file-input/DropFileInput";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const JobForm = (props) => {
   const [firstName, setFirstName] = useState("");
 
@@ -138,9 +141,19 @@ const JobForm = (props) => {
         if (response?.status === "201") {
           alert("Thank you for applying!");
           setIsLoading(false);
+          toast.success("Thank you for applying!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
           clearInputData();
         } else {
-          alert("Something went wrong!");
+          console.log(response);
+          toast.error("Something went wrong!");
         }
       } catch (error) {
         setIsLoading(false);
@@ -171,14 +184,14 @@ const JobForm = (props) => {
         <div className="row mb-3">
           <label
             htmlFor="name"
-            className="col-sm-3 col-md-3 col-3 col-form-label"
+            className="col-sm-4 col-md-4 col-4 col-form-label"
           >
             First Name&nbsp;
             <sup className="asterisk">
               <FaAsterisk />
             </sup>
           </label>
-          <div className="col-sm-9 col-md-9 col-9">
+          <div className="col-sm-8 col-md-8 col-8">
             <input
               type="text"
               className="form-control"
@@ -195,14 +208,14 @@ const JobForm = (props) => {
         <div className="row mb-3">
           <label
             htmlFor="name"
-            className="col-sm-3 col-md-3 col-3 col-form-label"
+            className="col-sm-4 col-md-4 col-4 col-form-label"
           >
             Last Name&nbsp;
             <sup className="asterisk">
               <FaAsterisk />
             </sup>
           </label>
-          <div className="col-sm-9 col-md-9 col-9">
+          <div className="col-sm-8 col-md-8 col-8">
             <input
               type="text"
               className="form-control"
@@ -217,14 +230,14 @@ const JobForm = (props) => {
         <div className="row mb-3">
           <label
             htmlFor="email"
-            className="col-sm-3 col-md-3 col-3 col-form-label"
+            className="col-sm-4 col-md-4 col-4 col-form-label"
           >
             Email&nbsp;
             <sup className="asterisk">
               <FaAsterisk />
             </sup>
           </label>
-          <div className="col-sm-9 col-md-9 col-9">
+          <div className="col-sm-8 col-md-8 col-8">
             <input
               type="email"
               onChange={handleEmailChange}
@@ -238,14 +251,14 @@ const JobForm = (props) => {
         <div className="row mb-3">
           <label
             htmlFor="phone"
-            className="col-sm-3 col-md-3 col-3 col-form-label"
+            className="col-sm-4 col-md-4 col-4 col-form-label"
           >
             Phone&nbsp;
             <sup className="asterisk">
               <FaAsterisk />
             </sup>
           </label>
-          <div className="col-sm-9 col-md-9 col-9">
+          <div className="col-sm-8 col-md-8 col-8">
             <input
               type="number"
               className="form-control "
@@ -259,7 +272,7 @@ const JobForm = (props) => {
         <div className="row mb-3">
           <label
             htmlFor="phone"
-            className="col-sm-3 col-md-3 col-3 col-form-label"
+            className="col-sm-4 col-md-4 col-4 col-form-label"
           >
             Resume&nbsp;
             <sup className="asterisk">
@@ -267,7 +280,7 @@ const JobForm = (props) => {
             </sup>
           </label>
 
-          <div className="col-sm-9 col-md-9 col-9">
+          <div className="col-sm-8 col-md-8 col-8">
             <DropFileInput onFileChange={(files) => onFileChange(files)} />
             {errors.file && (
               <p className="error-text">{errors.file}</p>
@@ -287,6 +300,7 @@ const JobForm = (props) => {
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

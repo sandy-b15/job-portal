@@ -23,7 +23,7 @@ const IndividualJobs = (props) => {
     newString = trimmedString;
   }
   return (
-    <li>
+    <div className="col-lg-3 col-md-4 ">
       <div className="card job_card">
         <div className="card-body bodycard">
           <h5 className="card-title mb-2">{props.title}</h5>
@@ -43,7 +43,7 @@ const IndividualJobs = (props) => {
           </div>
         </div>
       </div>
-    </li>
+    </div>
   );
 };
 
