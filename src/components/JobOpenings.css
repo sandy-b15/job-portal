@@ -66,6 +66,9 @@
   letter-spacing: 2px;
 }
 
+.apply-button:hover {
+  background-color: #e7948b !important;
+}
 .wrapper {
   margin-bottom: 8rem;
 }
@@ -117,7 +120,7 @@
 
 @media screen and (max-width: 768px) {
   .job_card {
-    width: 15rem;
+    width: 25rem;
   }
 
   .card-title {
@@ -153,6 +156,7 @@
 @media screen and (max-width: 600px) {
   .job_card {
     width: 20rem;
+    margin: 10px auto;
   }
 
   .card-title {
@@ -209,10 +213,6 @@
     height: 310px;
   }
 
-  .job_card {
-    width: 18rem;
-  }
-
   .card-subtitle {
     font-size: 12px;
   }
@@ -221,17 +221,8 @@
     font-size: 14px;
   }
 }
-@media screen and (max-width: 320px) {
-  .job_card {
-    width: 16rem;
-  }
 
-  .bodycard {
-    height: 300px;
-  }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1440px) {
+@media screen and (min-width: 992px) {
   .new-jobs {
     justify-content: flex-start;
   }
@@ -269,9 +260,9 @@
   }
 }
 
-@media screen and (min-width: 845px) and (max-width: 991px) {
+@media screen and (min-width: 767px) and (max-width: 991px) {
   .job_card {
-    width: 22rem;
+    width: 20rem;
   }
 
   .bodycard {
@@ -279,25 +270,13 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 845px) {
-  .job_card {
-    width: 18.5rem;
-  }
-
-  .bodycard {
-    height: 320px;
-  }
+@media screen and (min-width: 600px) and (max-width: 767px) {
 }
 
-@media screen and (min-width: 650px) and (max-width: 767px) {
+@media screen and (max-width: 600px) {
   .job_card {
-    width: 17rem;
-  }
-}
-
-@media screen and (min-width: 600px) and (max-width: 650px) {
-  .job_card {
-    width: 15rem;
+    /* width: 100%; */
+    margin: 10px auto;
   }
 
   .bodycard {
