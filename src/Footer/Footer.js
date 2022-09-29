@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <section className="background-footer footer">
-      <div className="container-fluid padzero full-height">
+      <div className="container-fluid padZero full-height">
         <div className="container footer-container">
           <div className="row footer-row">
             <div className="col-md-12 row-content">

@@ -65,10 +65,13 @@
   color: #fff;
   letter-spacing: 2px;
 }
+
+.apply-button:hover {
+  background-color: #e7948b !important;
+}
 .wrapper {
   margin-bottom: 8rem;
 }
-
 
 @media screen and (max-width: 1200px) {
   .job_card {
@@ -232,7 +235,7 @@
 }
 
 @media screen and (min-width: 992px) and (max-width: 1440px) {
-  .new-jobs{
+  .new-jobs {
     justify-content: flex-start;
   }
 }
@@ -266,7 +269,7 @@
 
   .bodycard {
     height: 336px;
-}
+  }
 }
 
 @media screen and (min-width: 845px) and (max-width: 991px) {
@@ -276,7 +279,7 @@
 
   .bodycard {
     height: 343px;
-}
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 845px) {
@@ -302,5 +305,5 @@
 
   .bodycard {
     height: 341px;
-}
+  }
 }

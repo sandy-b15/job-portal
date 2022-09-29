@@ -20,7 +20,7 @@ body {
 }
 
 .nav:hover {
-  color: #e95343 !important;
+  color: #e7948b !important;
 }
 
 .box > button {
@@ -47,6 +47,10 @@ body {
   border-radius: 8px;
   color: #fff;
   letter-spacing: 2px;
+}
+
+.applyJob-button:hover {
+  background-color: #e7948b !important;
 }
 
 .info-card {
