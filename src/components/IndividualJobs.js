@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import "./IndividualJobs.css";
 
 const IndividualJobs = (props) => {
-  // console.log(props.description);
   let navigate = useNavigate();
 
   const onPress = () => {
@@ -41,7 +40,7 @@ const IndividualJobs = (props) => {
           </button>
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 
