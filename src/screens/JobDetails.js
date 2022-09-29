@@ -1,8 +1,9 @@
 import React, {
   useState,
   useRef,
+  useEffect,
 } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import JobOpenings from "../components/JobOpenings";
 import "../components/Listing/SingleJobListing.css";
 
@@ -13,14 +14,28 @@ import { FaChevronLeft } from "react-icons/fa";
 import logo from "../images/logo.png";
 import LoadingScreen from "../components/LoadingScreen";
 import Footer from "../Footer/Footer";
+import { getSingleJob } from "../controllers/jobController";
 
 function JobDetails(props) {
-  const location = useLocation();
   const [error, setError] = useState(null);
-  const [jobDetails, setJobdetail] = useState(location.state.jobDetails);
   const myRef = useRef(null);
+  let { id } = useParams();
+  let arrayLength
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [jobDetails, setJobDetails] = useState(null)
+
+  const fetchSingleJobDetailsHandler = async () => {
+    const resp = await getSingleJob(id)
+    console.log(resp);
+    setLoading(false)
+    setJobDetails(resp)
+  };
+
+  useEffect(() => {
+    fetchSingleJobDetailsHandler()
+  }, [])
+
 
   const loadingHandler = (loadingValue) => {
     setLoading(loadingValue);
@@ -34,6 +49,7 @@ function JobDetails(props) {
   const onClickHandler = () => {
     myRef.current.scrollIntoView();
   };
+
   return (
     <>
       <LoadingScreen loading={loading}>
@@ -53,8 +69,8 @@ function JobDetails(props) {
             </div>
             <div className="jobTitle" style={{ marginTop: 40 }}>
               {content}
-              {jobDetails.title && <h1>{jobDetails.title}</h1>}
-              {jobDetails.location && <p>{jobDetails.location}</p>}
+              {jobDetails?.title && <h1>{jobDetails.title}</h1>}
+              {jobDetails?.location && <p>{jobDetails.location}</p>}
             </div>
             <div className="header-main">
               <h2 className="title">Who We Are</h2>
@@ -70,10 +86,24 @@ function JobDetails(props) {
 
           <div
             className="header"
-            dangerouslySetInnerHTML={{ __html: jobDetails.description }}
+            dangerouslySetInnerHTML={{ __html: jobDetails?.description }}
           ></div>
+
+          {
+            jobDetails?.skills.length !==0  && ( 
+              <div className="header">
+                <p className="title skills-para">Skills</p>
+                <ul>
+                  {jobDetails?.skills.map((skill) => (
+                    <li className="skills-list">{skill}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          }
+
           <JobForm
-            jobId={jobDetails.id}
+            jobId={jobDetails?.id}
             refProp={myRef}
             onLoading={loadingHandler}
           />

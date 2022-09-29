@@ -16,7 +16,7 @@ const Intro = (props) => {
       </div>
       <div className="intro_card">
         <div className="intro_div">
-          <h1>Work with us</h1>
+          <h1>Your Passion Begins Here</h1>
           <p>Join Our Team And Help Shape the Future</p>
           <div className="button-actions">
             <button className="apply-button " onClick={onClickHandler}>See Open Positions</button>

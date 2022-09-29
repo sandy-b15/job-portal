@@ -21,7 +21,6 @@ body {
 .intro_div {
   width: 40rem;
   margin-top: 7rem;
-  text-transform: uppercase;
 }
 
 .intro_div > h1 {

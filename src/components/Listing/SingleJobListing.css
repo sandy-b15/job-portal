@@ -88,9 +88,17 @@ body {
   width: 90%;
 }
 
+.skills-para {
+  margin-bottom: 18px !important;
+}
+
 .title {
   font-weight: 700;
   font-size: 1.5rem;
+}
+
+.skills-list {
+  text-transform: lowercase;
 }
 
 .header-main {
