@@ -9,7 +9,6 @@ const JobOpenings = (props) => {
 
   const fetchJobDetailsHandler = async () => {
     const resp = await getJobsList({ status: "published" });
-
     setJobs(resp);
   };
 
@@ -30,7 +29,7 @@ const JobOpenings = (props) => {
   }
   return (
     <Fragment>
-      <div className="wrapper" ref={props.refProp}>
+      <div className="container pt-5 mt-4" ref={props.refProp}>
         <section className="header-section">
           <div className="job-header">
             <h1>Current Job Openings</h1>
