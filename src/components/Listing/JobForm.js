@@ -17,8 +17,12 @@ const JobForm = (props) => {
   const [phone, setPhone] = useState("");
   const [resume, setSelectedResume] = useState(null);
   const fileInputRef = React.createRef();
-  const fileFormats = ["application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/pdf"];
-  let fileSize, isFileFormatValid
+  const fileFormats = [
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "application/pdf",
+  ];
+  let fileSize, isFileFormatValid;
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -40,7 +44,7 @@ const JobForm = (props) => {
     lastName: "",
     email: "",
     phone: "",
-    file: ""
+    file: "",
   });
 
   const clearInputData = () => {
@@ -49,13 +53,13 @@ const JobForm = (props) => {
       lastName: "",
       email: "",
       phone: "",
-      file: ""
+      file: "",
     });
     setFirstName("");
     setLastName("");
     setEmail("");
     setPhone("");
-    setSelectedResume(null)
+    setSelectedResume(null);
   };
 
   const isFormValid = () => {
@@ -93,12 +97,11 @@ const JobForm = (props) => {
     if (resume === null) {
       formErrors.file = "Please upload resume";
     } else if (!isFileFormatValid) {
-      formErrors.file = "Please upload valid file"
+      formErrors.file = "Please upload valid file";
     } else if (fileSize > 2) {
-      formErrors.file = "Maximum file size is 2MB"
-    }
-    else {
-      formErrors.file = ""
+      formErrors.file = "Maximum file size is 2MB";
+    } else {
+      formErrors.file = "";
     }
 
     setErrors(formErrors);
@@ -119,13 +122,14 @@ const JobForm = (props) => {
   const onSubmitHandler = async () => {
     // validation goes here
     if (resume != null) {
-      isFileFormatValid = fileFormats.includes(resume.type)
-      fileSize = (resume.size / (1024 * 1024)).toFixed(2)
+      isFileFormatValid = fileFormats.includes(resume.type);
+      fileSize = (resume.size / (1024 * 1024)).toFixed(2);
     }
 
     if (isFormValid()) {
       setIsLoading(true);
       console.log("entered check");
+      return;
       const formData = new FormData();
 
       formData.append("candidate[first_name]", firstName);
@@ -282,11 +286,8 @@ const JobForm = (props) => {
 
           <div className="col-sm-8 col-md-8 col-8">
             <DropFileInput onFileChange={(files) => onFileChange(files)} />
-            {errors.file && (
-              <p className="error-text">{errors.file}</p>
-            )}
+            {errors.file && <p className="error-text">{errors.file}</p>}
           </div>
-
         </div>
       </form>
       <div className="row mb-3">

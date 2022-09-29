@@ -59,11 +59,7 @@
   letter-spacing: 2px;
 }
 
-.submit-button:hover {
-  background-color: #e7948b !important;
-}
-
-.invalid input {
+.form-control .invalid {
   border: 1px solid #b40e0e;
   background-color: #fddddd;
 }
