@@ -59,7 +59,7 @@
   letter-spacing: 2px;
 }
 
-.invalid input {
+.form-control .invalid {
   border: 1px solid #b40e0e;
   background-color: #fddddd;
 }
@@ -83,7 +83,7 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-  }
+}
 
 /* Media Queries */
 @media screen and (min-width: 993px) {

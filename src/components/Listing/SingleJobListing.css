@@ -19,10 +19,6 @@ body {
   align-items: center;
 }
 
-.nav:hover {
-  color: #e95343 !important;
-}
-
 .box > button {
   background-color: #e36456;
   border-color: #e36456;
@@ -37,6 +33,10 @@ body {
   background-color: #e36456;
   border-color: #e36456;
   letter-spacing: 1px;
+}
+
+.nav:hover {
+  color: #e36456 !important;
 }
 
 .applyJob-button {

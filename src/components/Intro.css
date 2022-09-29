@@ -9,18 +9,17 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../images/topSection-new.png");
-  height: 37rem;
-  padding-left: 6rem;
 }
 
 .intro_card {
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
 }
 
 .intro_div {
-  width: 40rem;
-  margin-top: 7rem;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .intro_div > h1 {
@@ -35,7 +34,6 @@ body {
   margin-bottom: 37px;
 }
 
-
 .apply-button:hover {
   background-color: #da5547 !important;
   color: #fff !important;
@@ -47,18 +45,18 @@ body {
 
 .img-logo > img {
   width: 10rem;
-  padding-top: 2.5rem;
+  padding-top: 2rem;
 }
 
 .img_div > img {
   width: 40rem;
+  position: absolute;
+  right: 0;
 }
 
 .para {
   font-size: 1.2rem;
-  padding: 4rem 5rem 1rem 0;
-  width: 90%;
-  /* margin-left: 5rem; */
+  margin-top: 5rem;
 }
 
 .apply-button {
@@ -70,137 +68,129 @@ body {
   color: #fff;
   letter-spacing: 2px;
 }
+.intro_div {
+  height: 28rem;
+}
 
-@media screen and (max-width : 1200px){
-
-  .outer_card {
-    padding-left: 3rem;
+@media screen and (min-width: 1600px) {
+  .img_div > img {
+    position: relative;
   }
-
-  .img-logo>img {
-    width : 9rem;
+}
+@media screen and (max-width: 1200px) {
+  .img-logo > img {
+    width: 9rem;
   }
 
   .para {
-    padding : 2rem 2rem 0 0;
     font-size: 18px;
   }
 
-  .intro_div>h1 {
+  .intro_div > h1 {
     font-size: 2rem;
   }
 
-  .intro_div>p {
+  .intro_div > p {
     font-size: 14px;
   }
 
-  .img_div>img {
+  .img_div > img {
     width: 35rem;
   }
 
   .apply-button {
     font-size: 13px;
   }
-
 }
 
-@media screen and (max-width : 992px){
-
-  .outer_card {
-    padding-left: 2rem;
-  }
-
-  .img-logo>img {
+@media screen and (max-width: 992px) {
+  .img-logo > img {
     width: 8rem;
   }
 
   .intro_div {
-    margin-top: 6rem;
+    height: 20rem;
   }
 
   .para {
-    padding: 3rem 0;
     font-size: 16px;
   }
 
-  .intro_div>h1 {
+  .intro_div > h1 {
     font-size: 1.8rem;
   }
 
-  .intro_div>p {
+  .intro_div > p {
     font-size: 12px;
   }
 
-  .img_div>img {
-    width: 30rem;
+  .img_div > img {
+    width: 26rem;
   }
 
   .apply-button {
     font-size: 13px;
   }
-
+  .intro_div {
+    height: 20rem;
+  }
 }
 
-@media screen and (max-width : 768px){
-  .img-logo>img {
+@media screen and (max-width: 768px) {
+  .img-logo > img {
     width: 7rem;
   }
 
   .para {
     font-size: 14px;
+    margin-top: 0;
   }
 
-  .outer_card {
-    padding-left: 0;
-    margin-left: 2rem;
-    background-color: #f8f8f8;
-  }
-
-  .intro_div>h1 {
+  .intro_div > h1 {
     font-size: 1.5rem;
   }
 
-  .intro_div>p {
+  .intro_div > p {
     font-size: 10px;
   }
 
-  .img_div>img {
+  .img_div > img {
     width: 20rem;
   }
 
   .apply-button {
     font-size: 8px;
   }
-
-  .outer_card {
-    height: 30rem;
-  }
-
 }
 
-@media screen and (max-width : 600px) {
-  .img-logo>img {
+@media screen and (max-width: 600px) {
+  .img-logo > img {
     width: 5rem;
   }
 
   .intro_div {
-    margin-top: 4rem;
+    height: 20rem;
+    width: 100%;
+    align-items: center;
   }
 
   .para {
     font-size: 12px;
+    margin-top: 0;
+    text-align: center;
+    padding: 0 30px;
   }
 
-  .intro_div>h1 {
-    font-size: 1rem;
+  .intro_div > h1 {
+    font-size: 1rem !important;
   }
 
-  .intro_div>p {
+  .intro_div > p {
     font-size: 8px;
   }
 
-  .img_div>img {
-    width: 0rem
+  .img_div > img {
+    width: 0rem;
   }
 
   .apply-button {
@@ -211,7 +201,7 @@ body {
     background-image: none;
   }
 
-  .outer_card {
-    height: 25rem;
+  .job-header > h1 {
+    text-align: center;
   }
 }
