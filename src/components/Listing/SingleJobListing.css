@@ -99,6 +99,8 @@ body {
 
 .skills-list {
   text-transform: lowercase;
+  list-style-type: disc;
+  margin-left: 25px;
 }
 
 .header-main {
@@ -233,6 +235,10 @@ body {
 
   .jobPage-logo > img {
     width: 7rem;
+  }
+
+  .title {
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 600px) {
