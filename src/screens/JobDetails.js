@@ -1,19 +1,18 @@
 import React, {
-  useEffect,
   useState,
-  useCallback,
-  Fragment,
   useRef,
 } from "react";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import JobOpenings from "../components/JobOpenings";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/Listing/SingleJobListing.css";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 import JobForm from "../components/Listing/JobForm";
 import { FaChevronLeft } from "react-icons/fa";
 
 import logo from "../images/logo.png";
 import LoadingScreen from "../components/LoadingScreen";
+import Footer from "../Footer/Footer";
 
 function JobDetails(props) {
   const location = useLocation();
@@ -27,7 +26,6 @@ function JobDetails(props) {
     setLoading(loadingValue);
   };
 
-  console.log("jobDetails", jobDetails);
   let content;
   if (error) {
     content = error;
@@ -80,6 +78,7 @@ function JobDetails(props) {
             onLoading={loadingHandler}
           />
         </div>
+        <Footer />
       </LoadingScreen>
     </>
   );
