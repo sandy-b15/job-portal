@@ -16,6 +16,25 @@ export async function getJobsList(params) {
   return jobList;
 }
 
+export async function getSingleJob(id) {
+
+  if (id) {
+    let url = `https://lucidatechnologies-team.freshteam.com/api/job_postings/${id}`;
+    const singleJobDetails = await getApi(url)
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        alert("Something went wrong!");
+        return {};
+      });
+    return singleJobDetails;
+  } else {
+    alert("Invalid Job Id");
+    return {};
+  }
+}
+
 export async function applyJob(jobId, data) {
   if (jobId) {
     let url = `https://lucidatechnologies-team.freshteam.com/api/job_postings/${jobId}/applicants`;
