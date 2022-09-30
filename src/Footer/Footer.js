@@ -16,23 +16,35 @@ const Footer = () => {
                 <h1>COMPANY</h1>
                 <ul className="social-icons">
                   <li>
-                    <a className="facebook" href="about">
+                    <a
+                      className="facebook"
+                      href="https://www.lucidatechnologies.com/about"
+                    >
                       <p>About</p>
                     </a>
                   </li>
                   <li>
-                    <a className="google" href="index#services">
+                    <a
+                      className="google"
+                      href="https://www.lucidatechnologies.com/index#services"
+                    >
                       <p>Services</p>
                     </a>
                   </li>
 
                   <li>
-                    <a className="skype" href="blogs">
+                    <a
+                      className="skype"
+                      href="https://www.lucidatechnologies.com/blogs"
+                    >
                       <p>Blogs</p>
                     </a>
                   </li>
                   <li>
-                    <a className="skype" href="contact">
+                    <a
+                      className="skype"
+                      href="https://www.lucidatechnologies.com/contact"
+                    >
                       <p>Contact Us</p>
                     </a>
                   </li>
