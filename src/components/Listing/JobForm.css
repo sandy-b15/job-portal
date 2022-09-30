@@ -98,6 +98,15 @@ input::-webkit-inner-spin-button {
     width: 100%;
   }
 }
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .job-form {
+    margin: auto;
+    margin-bottom: 3rem;
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .form-header > h2 {
     font-size: 1.2rem;
