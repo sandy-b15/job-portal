@@ -10,7 +10,6 @@ export async function getJobsList(params) {
       }
     })
     .catch((error) => {
-      console.log("error", error);
       return [];
     });
   return jobList;
@@ -40,11 +39,9 @@ export async function applyJob(jobId, data) {
     let url = `https://lucidatechnologies-team.freshteam.com/api/job_postings/${jobId}/applicants`;
     const applyResponse = await postApi(url, data)
       .then((response) => {
-        console.log("response", response);
         return response;
       })
       .catch((error) => {
-        console.log("error", error);
         alert("Something went wrong!");
         return [];
       });

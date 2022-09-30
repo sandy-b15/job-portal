@@ -1,7 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React , {useLayoutEffect} from "react";
+import { BrowserRouter, Routes, Route , useLocation } from "react-router-dom";
 import Footer from "./Footer/Footer";
 import Home from "./screens/Home";
 import JobDetails from "./screens/JobDetails";
+
+
 
 export default function App() {
   return (
