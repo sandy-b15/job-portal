@@ -16,23 +16,23 @@ const Footer = () => {
                 <h1>COMPANY</h1>
                 <ul className="social-icons">
                   <li>
-                    <a className="facebook">
+                    <a className="facebook" href="about">
                       <p>About</p>
                     </a>
                   </li>
                   <li>
-                    <a className="google">
+                    <a className="google" href="index#services">
                       <p>Services</p>
                     </a>
                   </li>
 
                   <li>
-                    <a className="skype">
-                      <p>Blogs/White Paper</p>
+                    <a className="skype" href="blogs">
+                      <p>Blogs</p>
                     </a>
                   </li>
                   <li>
-                    <a className="skype">
+                    <a className="skype" href="contact">
                       <p>Contact Us</p>
                     </a>
                   </li>
@@ -65,18 +65,27 @@ const Footer = () => {
                   <div className="footer-widget social-widget">
                     <ul className="social-icons">
                       <li>
-                        <a className="facebook">
+                        <a
+                          className="facebook"
+                          href="https://www.facebook.com/lucidatechnologies/"
+                        >
                           <FaFacebookF />
                         </a>
                       </li>
                       <li>
-                        <a className="twitter">
+                        <a
+                          className="twitter"
+                          href="https://twitter.com/lucida_tech"
+                        >
                           <FaTwitter />
                         </a>
                       </li>
 
                       <li>
-                        <a className="linkedIn">
+                        <a
+                          className="linkedIn"
+                          href="https://www.linkedin.com/company/lucidatech/"
+                        >
                           <FaLinkedin />
                         </a>
                       </li>
