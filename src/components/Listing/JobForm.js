@@ -128,7 +128,6 @@ const JobForm = (props) => {
 
     if (isFormValid()) {
       setIsLoading(true);
-      return;
       const formData = new FormData();
 
       formData.append("candidate[first_name]", firstName);
