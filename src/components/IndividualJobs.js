@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useLayoutEffect} from "react";
 import { Link } from "react-router-dom";
 import "./JobOpenings.css";
 import { useNavigate } from "react-router-dom";

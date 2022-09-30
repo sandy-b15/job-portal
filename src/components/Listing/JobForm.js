@@ -128,7 +128,6 @@ const JobForm = (props) => {
 
     if (isFormValid()) {
       setIsLoading(true);
-      console.log("entered check");
       return;
       const formData = new FormData();
 
@@ -156,7 +155,6 @@ const JobForm = (props) => {
           });
           clearInputData();
         } else {
-          console.log(response);
           toast.error("Something went wrong!");
         }
       } catch (error) {
