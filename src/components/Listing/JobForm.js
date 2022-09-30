@@ -140,8 +140,7 @@ const JobForm = (props) => {
 
       try {
         const response = await applyJob(props.jobId, formData);
-        if (response?.status === "201") {
-          alert("Thank you for applying!");
+        if (response?.status === 201) {
           setIsLoading(false);
           toast.success("Thank you for applying!", {
             position: "top-right",
@@ -154,7 +153,12 @@ const JobForm = (props) => {
           });
           clearInputData();
         } else {
-          toast.error("Something went wrong!");
+          setIsLoading(false);
+          if (response?.data?.errors?.length > 0) {
+            toast.error(response?.data?.errors[0]?.message);
+          } else {
+            toast.error("Something went wrong!");
+          }
         }
       } catch (error) {
         setIsLoading(false);
