@@ -69,7 +69,7 @@ function JobDetails(props) {
             </div>
             <div className="jobTitle" style={{ marginTop: 40 }}>
               {jobDetails?.title && <h1>{jobDetails.title}</h1>}
-              {jobDetails?.location && <p>{jobDetails.location}</p>}
+              {jobDetails?.branch.city && <p>{jobDetails.branch.city}, Karnataka</p>}
             </div>
           </div>
         </div>
