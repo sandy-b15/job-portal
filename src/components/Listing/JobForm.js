@@ -23,6 +23,7 @@ const JobForm = (props) => {
     "application/pdf",
   ];
   let fileSize, isFileFormatValid;
+  var letters = /^[A-Za-z]+$/;
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -66,7 +67,7 @@ const JobForm = (props) => {
     let isValid = true;
     let formErrors = { ...errors };
 
-    if (firstName.trim().length === 0) {
+    if (firstName.trim().length === 0 && firstName.match(letters)) {
       formErrors.firstName = "Please enter a first name.";
     } else {
       formErrors.firstName = "";
