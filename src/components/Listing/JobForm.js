@@ -71,7 +71,7 @@ const JobForm = (props) => {
 
     if (firstName.trim().length === 0) {
       formErrors.firstName = "Please enter a first name.";
-    } else if (!reg.test(firstName)) {
+    } else if (!nameReg.test(firstName)) {
       formErrors.firstName = "Please enter a valid first name";
     } else {
       formErrors.firstName = "";
@@ -79,7 +79,7 @@ const JobForm = (props) => {
 
     if (lastName.trim().length === 0) {
       formErrors.lastName = "Please enter a last name.";
-    } else if (!reg.test(lastName)) {
+    } else if (!nameReg.test(lastName)) {
       formErrors.lastName = "Please enter a valid last name";
     } else {
       formErrors.lastName = "";
