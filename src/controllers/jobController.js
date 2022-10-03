@@ -16,7 +16,6 @@ export async function getJobsList(params) {
 }
 
 export async function getSingleJob(id) {
-
   if (id) {
     let url = `https://lucidatechnologies-team.freshteam.com/api/job_postings/${id}`;
     const singleJobDetails = await getApi(url)
@@ -24,8 +23,7 @@ export async function getSingleJob(id) {
         return response.data;
       })
       .catch((error) => {
-        alert("Something went wrong!");
-        return {};
+        return error.response;
       });
     return singleJobDetails;
   } else {
@@ -42,8 +40,7 @@ export async function applyJob(jobId, data) {
         return response;
       })
       .catch((error) => {
-        alert("Something went wrong!");
-        return [];
+        return error.response;
       });
     return applyResponse;
   } else {
