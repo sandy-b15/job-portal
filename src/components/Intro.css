@@ -7,7 +7,7 @@ body {
 
 .outer_card {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-image: url("../images/topSection-new.png");
 }
 
@@ -38,7 +38,6 @@ body {
   background-color: #da5547 !important;
   color: #fff !important;
 }
-
 
 .img-logo > img {
   width: 8rem;
