@@ -53,67 +53,65 @@ function JobDetails(props) {
     <>
       <LoadingScreen loading={loading}>
         <div className="outermost-div">
-        <div className="job_details">
-          <div className="jobPage-logo container">
-            <img src={logo} alt="Lucida's logo" />
+          <div className="job_details">
+            <div className="jobPage-logo container">
+              <img src={logo} alt="Lucida's logo" />
+            </div>
+            <div className="info-card container">
+              <div className="box">
+                <Link to="/" element={<JobOpenings />} className="nav">
+                  <FaChevronLeft className="backarrow" />
+                  &nbsp;Back
+                </Link>
+                <button className="applyJob-button" onClick={onClickHandler}>
+                  Apply
+                </button>
+              </div>
+              <div className="jobTitle" style={{ marginTop: 40 }}>
+                {jobDetails?.title && <h1>{jobDetails.title}</h1>}
+                {jobDetails?.branch.city && <p>{jobDetails.branch.city}, Karnataka</p>}
+              </div>
+
+              {
+                jobDetails?.skills.length !== 0 && (
+                  <div className="header">
+                    <p className="title skills-para">Skills</p>
+                    {jobDetails?.skills.map((skill) => (
+                      <span className="skills" key={skill}>{skill}, </span>
+                    ))}
+                  </div>
+                )
+              }
+
+            </div>
           </div>
-          <div className="info-card container">
-            <div className="box">
-              <Link to="/" element={<JobOpenings />} className="nav">
-                <FaChevronLeft className="backarrow" />
-                &nbsp;Back
-              </Link>
-              <button className="applyJob-button" onClick={onClickHandler}>
-                Apply
-              </button>
+
+          <div className="header-div container">
+            <div className="header-main">
+              <h2 className="title">Who We Are</h2>
+              <p>
+                'Lucida Technologies' is a Bangalore based Technology firm
+                specializing in the areas of Digital and Analytics
+                solutions,Machine Learning and Artificial Intelligence.We cater
+                to multiple clients in India,Malaysia,Singapore and USA spanning
+                across various domains and industries
+              </p>
             </div>
-            <div className="jobTitle" style={{ marginTop: 40 }}>
-              {jobDetails?.title && <h1>{jobDetails.title}</h1>}
-              {jobDetails?.branch.city && <p>{jobDetails.branch.city}, Karnataka</p>}
-            </div>
+
+            <div
+              className="header"
+              dangerouslySetInnerHTML={{ __html: jobDetails?.description }}
+            ></div>
+
+            <JobForm
+              jobId={jobDetails?.id}
+              refProp={myRef}
+              onLoading={loadingHandler}
+            />
           </div>
-        </div>
-
-        <div className="header-div container">
-        <div className="header-main">
-          <h2 className="title">Who We Are</h2>
-          <p>
-            'Lucida Technologies' is a Bangalore based Technology firm
-            specializing in the areas of Digital and Analytics
-            solutions,Machine Learning and Artificial Intelligence.We cater
-            to multiple clients in India,Malaysia,Singapore and USA spanning
-            across various domains and industries
-          </p>
-        </div>
-
-        <div
-          className="header"
-          dangerouslySetInnerHTML={{ __html: jobDetails?.description }}
-        ></div>
-
-        {
-          jobDetails?.skills.length !== 0 && (
-            <div className="header">
-              <p className="title skills-para">Skills</p>
-              <ul className="skills-list">
-                {jobDetails?.skills.map((skill) => (
-                  <li>{skill}</li>
-                ))}
-              </ul>
-            </div>
-          )
-        }
-
-
-        <JobForm
-          jobId={jobDetails?.id}
-          refProp={myRef}
-          onLoading={loadingHandler}
-        />
-        </div>
         </div>
         <Footer />
-        </LoadingScreen>
+      </LoadingScreen>
 
     </>
   );

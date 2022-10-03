@@ -82,23 +82,22 @@ body {
 }
 
 .skills-para {
-  margin-bottom: 18px !important;
+  margin-bottom: 10px !important;
+}
+
+.skills {
+  text-transform: capitalize !important;
+  font-size: 1rem;
 }
 
 .title {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
-.skills-list {
-  text-transform: lowercase;
-  list-style-type: disc;
-  margin-left: 25px;
-  margin-bottom: 5rem;
-}
 
 .header-main {
-  margin: 0 0 4rem 5rem;
+  margin: 7rem 0 4rem 5rem;
 }
 
 .paragraph {
@@ -113,16 +112,16 @@ body {
 }
 
 .jobPage-logo > img {
-  width: 10rem;
+  width: 8rem;
   margin-left: 5.5rem;
-  padding-top: 2.5rem;
+  padding-top: 1.5rem;
 }
 
 .job_details {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-image: url("../../images/topSection-new.png");
-  height: 35rem;
+  
 }
 /* Media Queries */
 
