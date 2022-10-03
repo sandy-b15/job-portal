@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./JobForm.css";
-import { FaAsterisk } from "react-icons/fa";
+import { FaAsterisk, FaVirusSlash } from "react-icons/fa";
 import { applyJob } from "../../controllers/jobController";
 import { useEffect } from "react";
 
@@ -23,6 +23,9 @@ const JobForm = (props) => {
     "application/pdf",
   ];
   let fileSize, isFileFormatValid;
+  let nameReg = /^[A-Za-z]+$/;
+  let phoneReg = new RegExp(/^[0-9\b]+$/);
+  let emailRegex = new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -68,28 +71,32 @@ const JobForm = (props) => {
 
     if (firstName.trim().length === 0) {
       formErrors.firstName = "Please enter a first name.";
+    } else if (!nameReg.test(firstName)) {
+      formErrors.firstName = "Please enter a valid first name";
     } else {
       formErrors.firstName = "";
     }
 
     if (lastName.trim().length === 0) {
       formErrors.lastName = "Please enter a last name.";
+    } else if (!nameReg.test(lastName)) {
+      formErrors.lastName = "Please enter a valid last name";
     } else {
       formErrors.lastName = "";
     }
 
     if (email.trim().length === 0) {
-      formErrors.email = "Please enter a valid email address.";
-    } else if (email.includes("@")) {
-      formErrors.phone = "Please enter a valid phone number.";
+      formErrors.email = "Please enter a email address.";
+    } else if (!emailRegex.test(email)) {
+      formErrors.email = "Please enter valid email address.";
     } else {
       formErrors.email = "";
     }
 
-    if (phone.trim().length === 0) {
-      formErrors.phone = "Please enter a valid phone number.";
-    } else if (phone.trim().length > 10) {
-      formErrors.phone = "Please enter a valid phone number.";
+    if (!phoneReg.test(phone)) {
+      formErrors.phone = "Please enter only number.";
+    } else if (phone.length !== 10) {
+      formErrors.phone = "Please enter a valid number.";
     } else {
       formErrors.phone = "";
     }

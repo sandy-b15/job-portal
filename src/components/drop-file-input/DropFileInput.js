@@ -6,7 +6,7 @@ import "./drop-file-input.css";
 import { ImageConfig } from "../../config/ImageConfig";
 import uploadImg from "../../assets/file-upload.svg";
 
-import { FaTrashAlt } from "react-icons/fa";
+import { FaTimesCircle } from "react-icons/fa";
 
 const DropFileInput = (props) => {
   const wrapperRef = useRef(null);
@@ -55,11 +55,8 @@ const DropFileInput = (props) => {
         <div className="drop-file-preview">
           <p className="drop-file-preview__title">Ready to upload</p>
           {fileList.map((item, index) => (
-            <div
-              key={index}
-              className="drop-file-preview__item row upload-file"
-            >
-              <div className="col-sm-2 col-md-2 col-2">
+            <div key={index} className="file-block">
+              <div className="file-info">
                 <img
                   src={
                     ImageConfig[item.type.split("/")[1]] ||
@@ -67,18 +64,16 @@ const DropFileInput = (props) => {
                   }
                   alt=""
                 />
+                <div className="file-details">
+                  <span className="file-name">{item.name} </span>
+                  <span className="file-size">
+                    {(item.size / (1024 * 1024)).toFixed(2)}MB
+                  </span>
+                </div>
               </div>
-              <div className="col-sm-9 col-md-9 col-9 drop-file-preview__item__info">
-                <p>
-                  {item.name} <br />
-                  {(item.size / (1024 * 1024)).toFixed(2)}MB
-                </p>
-              </div>
-              <div
-                className="col-sm-1 col-md-1 col-1 drop-file-preview__item__del"
-                onClick={() => fileRemove(item)}
-              >
-                <FaTrashAlt className="del-file" />
+
+              <div className="remove-file" onClick={() => fileRemove(item)}>
+                <FaTimesCircle className="del-file" />
               </div>
             </div>
           ))}

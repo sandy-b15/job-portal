@@ -7,7 +7,7 @@ body {
 
 .outer_card {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-image: url("../images/topSection-new.png");
 }
 
@@ -39,10 +39,9 @@ body {
   color: #fff !important;
 }
 
-
 .img-logo > img {
-  width: 10rem;
-  padding-top: 2rem;
+  width: 8rem;
+  padding-top: 1.5rem;
 }
 
 .img_div > img {
