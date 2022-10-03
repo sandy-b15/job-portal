@@ -59,21 +59,21 @@
   align-items: center;
 }
 
-.drop-file-preview__item img {
+/* .file-info img {
   width: 50px;
   height: 50px;
   margin-right: 20px;
-}
+} */
 
-.drop-file-preview__item__info {
+/* .file-name, .file-size {
   margin-top: 1rem;
   margin-bottom: 0;
   padding-left: 0;
 }
 
-.drop-file-preview__item__info p {
+.file-name, .file-size p {
   overflow: hidden;
-}
+} */
 
 .drop-file-preview__item__del {
   /* width: 40px;
@@ -94,13 +94,48 @@
 }
 
 .del-file {
-  color: red;
+  color: #d10202;
 }
 
 .upload-file {
   justify-items: center;
 }
 
+.file-block {
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: 10px 0 15px; */
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.file-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-info img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.file-name,
+.file-size {
+  padding: 0 3px;
+}
+.remove-file {
+  cursor: pointer;
+}
 /* Media Queries */
 
 @media screen and (max-width: 1200px) {
@@ -111,11 +146,12 @@
   .drop-file-input__label p {
     font-size: 15px;
   }
-  .drop-file-preview__item img {
+  .file-info img {
     width: 47px;
     height: 47px;
   }
-  .drop-file-preview__item__info {
+  .file-name,
+  .file-size {
     font-size: 16px;
   }
 }
@@ -129,11 +165,12 @@
   .drop-file-input__label p {
     font-size: 14px;
   }
-  .drop-file-preview__item img {
+  .file-info img {
     width: 45px;
     height: 45px;
   }
-  .drop-file-preview__item__info {
+  .file-name,
+  .file-size {
     font-size: 15px;
   }
 }
@@ -147,11 +184,12 @@
   .drop-file-input__label p {
     font-size: 13px;
   }
-  .drop-file-preview__item img {
+  .file-info img {
     width: 43px;
     height: 43px;
   }
-  .drop-file-preview__item__info {
+  .file-name,
+  .file-size {
     font-size: 14px;
   }
 }
@@ -165,11 +203,12 @@
   .drop-file-input__label p {
     font-size: 12px;
   }
-  .drop-file-preview__item img {
+  .file-info img {
     width: 36px;
     height: 36px;
   }
-  .drop-file-preview__item__info {
+  .file-name,
+  .file-size {
     font-size: 12px;
   }
 }
