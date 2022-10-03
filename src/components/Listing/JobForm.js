@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./JobForm.css";
-import { FaAsterisk } from "react-icons/fa";
+import { FaAsterisk, FaVirusSlash } from "react-icons/fa";
 import { applyJob } from "../../controllers/jobController";
 import { useEffect } from "react";
 
@@ -23,7 +23,7 @@ const JobForm = (props) => {
     "application/pdf",
   ];
   let fileSize, isFileFormatValid;
-  var letters = /^[A-Za-z]+$/;
+  let reg = /^[A-Za-z]+$/;
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -67,14 +67,18 @@ const JobForm = (props) => {
     let isValid = true;
     let formErrors = { ...errors };
 
-    if (firstName.trim().length === 0 && firstName.match(letters)) {
+    if (firstName.trim().length === 0) {
       formErrors.firstName = "Please enter a first name.";
+    } else if (!(reg.test(firstName))) {
+      formErrors.firstName = "Please enter a valid first name"
     } else {
       formErrors.firstName = "";
     }
 
     if (lastName.trim().length === 0) {
       formErrors.lastName = "Please enter a last name.";
+    } else if (!(reg.test(lastName))) {
+      formErrors.lastName = "Please enter a valid last name"
     } else {
       formErrors.lastName = "";
     }
@@ -129,6 +133,7 @@ const JobForm = (props) => {
 
     if (isFormValid()) {
       setIsLoading(true);
+      return
       const formData = new FormData();
 
       formData.append("candidate[first_name]", firstName);
